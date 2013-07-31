@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B7D59F817A091B6001D3C3E /* WattTimeAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */; };
+		3B7D59FA17A091BA001D3C3E /* WattTimeAppIconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */; };
+		3B96225B1786143F00C7EDC6 /* WattTimeWhiteWordLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B96225A1786143F00C7EDC6 /* WattTimeWhiteWordLogo.png */; };
+		3BC255FC17936A79008D2ABE /* States.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BC255FB17936A79008D2ABE /* States.plist */; };
+		3BEE633E1783A99300136BB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE633D1783A99300136BB7 /* UIKit.framework */; };
+		3BEE63401783A99300136BB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE633F1783A99300136BB7 /* Foundation.framework */; };
+		3BEE63421783A99300136BB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE63411783A99300136BB7 /* CoreGraphics.framework */; };
+		3BEE63441783A99300136BB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE63431783A99300136BB7 /* CoreData.framework */; };
+		3BEE634A1783A99300136BB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BEE63481783A99300136BB7 /* InfoPlist.strings */; };
+		3BEE634C1783A99300136BB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE634B1783A99300136BB7 /* main.m */; };
+		3BEE63501783A99300136BB7 /* WTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE634F1783A99300136BB7 /* WTAppDelegate.m */; };
+		3BEE63531783A99300136BB7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BEE63511783A99300136BB7 /* MainStoryboard_iPhone.storyboard */; };
+		3BEE63561783A99300136BB7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BEE63541783A99300136BB7 /* MainStoryboard_iPad.storyboard */; };
+		3BEE63591783A99300136BB7 /* wattTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */; };
+		3BEE635C1783A99300136BB7 /* WTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE635B1783A99300136BB7 /* WTMainViewController.m */; };
+		3BEE635F1783A99300136BB7 /* WTFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE635E1783A99300136BB7 /* WTFlipsideViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WattTimeAppIcon.png; path = ../WattTimeAppIcon.png; sourceTree = "<group>"; };
+		3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WattTimeAppIconBig.png; path = ../WattTimeAppIconBig.png; sourceTree = "<group>"; };
+		3B96225A1786143F00C7EDC6 /* WattTimeWhiteWordLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattTimeWhiteWordLogo.png; sourceTree = "<group>"; };
+		3BC255FB17936A79008D2ABE /* States.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = States.plist; sourceTree = "<group>"; };
+		3BEE63391783A99300136BB7 /* wattTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wattTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BEE633D1783A99300136BB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3BEE633F1783A99300136BB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3BEE63411783A99300136BB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3BEE63431783A99300136BB7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3BEE63471783A99300136BB7 /* wattTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wattTime-Info.plist"; sourceTree = "<group>"; };
+		3BEE63491783A99300136BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3BEE634B1783A99300136BB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BEE634D1783A99300136BB7 /* wattTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wattTime-Prefix.pch"; sourceTree = "<group>"; };
+		3BEE634E1783A99300136BB7 /* WTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAppDelegate.h; sourceTree = "<group>"; };
+		3BEE634F1783A99300136BB7 /* WTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAppDelegate.m; sourceTree = "<group>"; };
+		3BEE63521783A99300136BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		3BEE63551783A99300136BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		3BEE63581783A99300136BB7 /* wattTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wattTime.xcdatamodel; sourceTree = "<group>"; };
+		3BEE635A1783A99300136BB7 /* WTMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTMainViewController.h; sourceTree = "<group>"; };
+		3BEE635B1783A99300136BB7 /* WTMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMainViewController.m; sourceTree = "<group>"; };
+		3BEE635D1783A99300136BB7 /* WTFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFlipsideViewController.h; sourceTree = "<group>"; };
+		3BEE635E1783A99300136BB7 /* WTFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFlipsideViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BEE63361783A99300136BB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BEE633E1783A99300136BB7 /* UIKit.framework in Frameworks */,
+				3BEE63401783A99300136BB7 /* Foundation.framework in Frameworks */,
+				3BEE63421783A99300136BB7 /* CoreGraphics.framework in Frameworks */,
+				3BEE63441783A99300136BB7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BEE632E1783A99300136BB7 = {
+			isa = PBXGroup;
+			children = (
+				3BEE63451783A99300136BB7 /* wattTime */,
+				3BEE633C1783A99300136BB7 /* Frameworks */,
+				3BEE633A1783A99300136BB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BEE633A1783A99300136BB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BEE63391783A99300136BB7 /* wattTime.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BEE633C1783A99300136BB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BEE633D1783A99300136BB7 /* UIKit.framework */,
+				3BEE633F1783A99300136BB7 /* Foundation.framework */,
+				3BEE63411783A99300136BB7 /* CoreGraphics.framework */,
+				3BEE63431783A99300136BB7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BEE63451783A99300136BB7 /* wattTime */ = {
+			isa = PBXGroup;
+			children = (
+				3BEE63511783A99300136BB7 /* MainStoryboard_iPhone.storyboard */,
+				3BEE63541783A99300136BB7 /* MainStoryboard_iPad.storyboard */,
+				3BEE635A1783A99300136BB7 /* WTMainViewController.h */,
+				3BEE635B1783A99300136BB7 /* WTMainViewController.m */,
+				3BEE635D1783A99300136BB7 /* WTFlipsideViewController.h */,
+				3BEE635E1783A99300136BB7 /* WTFlipsideViewController.m */,
+				3BEE63461783A99300136BB7 /* Supporting Files */,
+				3BC255FB17936A79008D2ABE /* States.plist */,
+			);
+			path = wattTime;
+			sourceTree = "<group>";
+		};
+		3BEE63461783A99300136BB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */,
+				3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */,
+				3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */,
+				3BEE634E1783A99300136BB7 /* WTAppDelegate.h */,
+				3BEE634F1783A99300136BB7 /* WTAppDelegate.m */,
+				3B96225A1786143F00C7EDC6 /* WattTimeWhiteWordLogo.png */,
+				3BEE63471783A99300136BB7 /* wattTime-Info.plist */,
+				3BEE63481783A99300136BB7 /* InfoPlist.strings */,
+				3BEE634B1783A99300136BB7 /* main.m */,
+				3BEE634D1783A99300136BB7 /* wattTime-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BEE63381783A99300136BB7 /* wattTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BEE63621783A99300136BB7 /* Build configuration list for PBXNativeTarget "wattTime" */;
+			buildPhases = (
+				3BEE63351783A99300136BB7 /* Sources */,
+				3BEE63361783A99300136BB7 /* Frameworks */,
+				3BEE63371783A99300136BB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wattTime;
+			productName = wattTime;
+			productReference = 3BEE63391783A99300136BB7 /* wattTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BEE63301783A99300136BB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Novodox;
+			};
+			buildConfigurationList = 3BEE63331783A99300136BB7 /* Build configuration list for PBXProject "wattTime" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BEE632E1783A99300136BB7;
+			productRefGroup = 3BEE633A1783A99300136BB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BEE63381783A99300136BB7 /* wattTime */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BEE63371783A99300136BB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BEE634A1783A99300136BB7 /* InfoPlist.strings in Resources */,
+				3BEE63531783A99300136BB7 /* MainStoryboard_iPhone.storyboard in Resources */,
+				3BEE63561783A99300136BB7 /* MainStoryboard_iPad.storyboard in Resources */,
+				3B96225B1786143F00C7EDC6 /* WattTimeWhiteWordLogo.png in Resources */,
+				3BC255FC17936A79008D2ABE /* States.plist in Resources */,
+				3B7D59F817A091B6001D3C3E /* WattTimeAppIcon.png in Resources */,
+				3B7D59FA17A091BA001D3C3E /* WattTimeAppIconBig.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BEE63351783A99300136BB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BEE634C1783A99300136BB7 /* main.m in Sources */,
+				3BEE63501783A99300136BB7 /* WTAppDelegate.m in Sources */,
+				3BEE63591783A99300136BB7 /* wattTime.xcdatamodeld in Sources */,
+				3BEE635C1783A99300136BB7 /* WTMainViewController.m in Sources */,
+				3BEE635F1783A99300136BB7 /* WTFlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3BEE63481783A99300136BB7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BEE63491783A99300136BB7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3BEE63511783A99300136BB7 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BEE63521783A99300136BB7 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		3BEE63541783A99300136BB7 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BEE63551783A99300136BB7 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BEE63601783A99300136BB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BEE63611783A99300136BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BEE63631783A99300136BB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wattTime/wattTime-Prefix.pch";
+				INFOPLIST_FILE = "wattTime/wattTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3BEE63641783A99300136BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wattTime/wattTime-Prefix.pch";
+				INFOPLIST_FILE = "wattTime/wattTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BEE63331783A99300136BB7 /* Build configuration list for PBXProject "wattTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BEE63601783A99300136BB7 /* Debug */,
+				3BEE63611783A99300136BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BEE63621783A99300136BB7 /* Build configuration list for PBXNativeTarget "wattTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BEE63631783A99300136BB7 /* Debug */,
+				3BEE63641783A99300136BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3BEE63581783A99300136BB7 /* wattTime.xcdatamodel */,
+			);
+			currentVersion = 3BEE63581783A99300136BB7 /* wattTime.xcdatamodel */;
+			path = wattTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3BEE63301783A99300136BB7 /* Project object */;
+}
