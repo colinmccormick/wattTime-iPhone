@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>California</string>
+		<key>Abbreviation</key>
+		<string>CA</string>
+		<key>Time zone</key>
+		<string>America/Los_Angeles</string>
+	</dict>
+    <dict>
+		<key>Name</key>
+		<string>Connecticut</string>
+		<key>Abbreviation</key>
+		<string>CT</string>
+		<key>Time zone</key>
+		<string>America/New_York</string>
+	</dict>
+    <dict>
+        <key>Name</key>
+        <string>Idaho</string>
+        <key>Abbreviation</key>
+        <string>ID</string>
+        <key>Time zone</key>
+        <string>America/Denver</string>
+    </dict>
+    <dict>
+		<key>Name</key>
+		<string>Maine</string>
+		<key>Abbreviation</key>
+		<string>ME</string>
+		<key>Time zone</key>
+		<string>America/New_York</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Massachusetts</string>
+		<key>Abbreviation</key>
+		<string>MA</string>
+		<key>Time zone</key>
+		<string>America/New_York</string>
+	</dict>
+    <dict>
+		<key>Name</key>
+		<string>New Hampshire</string>
+		<key>Abbreviation</key>
+		<string>NH</string>
+		<key>Time zone</key>
+		<string>America/New_York</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Oregon</string>
+		<key>Abbreviation</key>
+		<string>OR</string>
+		<key>Time zone</key>
+		<string>America/Los_Angeles</string>
+	</dict>
+    <dict>
+		<key>Name</key>
+		<string>Rhode Island</string>
+		<key>Abbreviation</key>
+		<string>RI</string>
+		<key>Time zone</key>
+		<string>America/New_York</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Vermont</string>
+		<key>Abbreviation</key>
+		<string>VT</string>
+		<key>Time zone</key>
+		<string>America/New_York</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Washington</string>
+		<key>Abbreviation</key>
+		<string>WA</string>
+		<key>Time zone</key>
+		<string>America/Los_Angeles</string>
+	</dict>
+</array>
+</plist>
