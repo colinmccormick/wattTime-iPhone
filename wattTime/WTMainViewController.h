@@ -14,10 +14,12 @@
 
 @interface WTMainViewController : UIViewController <WTFlipsideViewControllerDelegate, UIPopoverControllerDelegate> {
 
-    IBOutlet UILabel *timeLabel;
-    IBOutlet UILabel *locationLabel;
-    IBOutlet UILabel *percentGreenLabel;
-        
+    __weak IBOutlet UILabel *timeLabel;
+    __weak IBOutlet UILabel *locationLabel;
+    __weak IBOutlet UILabel *percentGreenLabel;
+    __weak IBOutlet UILabel *futurePercentGreenLabel;
+    __weak IBOutlet UILabel *futureTimeLabel;
+ 
     __weak IBOutlet UIButton *updateButton;
     
     NSDate *currentDate;

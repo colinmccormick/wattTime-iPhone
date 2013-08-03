@@ -52,14 +52,20 @@
         // Put back on the main thread to use UIKit
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            // Extract element of JSON array corresponding to the current hour (in default time zone)
+            // Extract elements of JSON array corresponding to the current and next hour (in default time zone) 
             if (result) {            
+                // Extract element for current hour and update
                 NSDate *date = [NSDate date];
                 NSCalendar *calendar = [NSCalendar currentCalendar];
                 NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
                 NSInteger theHour = [components hour];
                 NSNumber *percentGreen = [[result objectAtIndex:theHour] valueForKey:PERCENT_GREEN_KEY];
-                percentGreenLabel.text = [NSString stringWithFormat:@"%0.1f", [percentGreen floatValue]];
+                percentGreenLabel.text = [NSString stringWithFormat:@"%0.1f%% green.", [percentGreen floatValue]];
+                
+                // Extract element for next hour and update.  Rely on updateTimer to update futureTimeLabel
+                NSInteger theNextHour = theHour + 1;
+                NSNumber *futurePercentGreen = [[result objectAtIndex:theNextHour] valueForKey:PERCENT_GREEN_KEY];
+                futurePercentGreenLabel.text = [NSString stringWithFormat:@"%0.1f%% green.", [futurePercentGreen floatValue]];
             } else {
                 NSLog(@"JSON parse error %@", error);
                 percentGreenLabel.text = @"N/A";
@@ -84,13 +90,30 @@
 
 // Update the time.  Update only every 5 seconds to reduce cost.
 - (void)updateTimer {
+    // Update time label
     [updateTimer invalidate];
     updateTimer = nil;
     currentDate = [NSDate date];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
-    timeLabel.text = [timeFormatter stringFromDate:currentDate];
+    NSString *theCurrentHour = [timeFormatter stringFromDate:currentDate];
+    timeLabel.text = [NSString stringWithFormat:@"It's %@ in", theCurrentHour];
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    
+    // Update the next hour label
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
+    NSInteger theNextHour = [components hour] + 1;
+    NSString *theNextHourLabelPartial;
+    if (theNextHour < 12) {
+        theNextHourLabelPartial = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%i:00 AM", theNextHour]];
+    } else if (theNextHour < 23) {
+        theNextHourLabelPartial = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%i:00 PM", theNextHour - 12]];
+    } else {
+        theNextHourLabelPartial = [[NSString alloc] initWithString:@"12:00 AM"];
+    }
+    NSString *theNextHourLabel = [NSString stringWithFormat:@"At %@ it will be", theNextHourLabelPartial];
+    futureTimeLabel.text = theNextHourLabel;
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,6 +146,8 @@
 
 - (void)viewDidUnload
 {
+    futureTimeLabel = nil;
+    futurePercentGreenLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     updateButton = nil;

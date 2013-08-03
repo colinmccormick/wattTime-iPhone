@@ -28,31 +28,31 @@
                                     <segue destination="6" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="11"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00 PM" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="sg0-QI-e12">
-                                <rect key="frame" x="0.0" y="120" width="320" height="36"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="It's 00:00 PM in" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="sg0-QI-e12">
+                                <rect key="frame" x="26" y="108" width="268" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="It's" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="14" id="ghx-nX-9aA">
-                                <rect key="frame" x="50" y="126" width="42" height="24"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.0% green." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="14" id="clJ-NN-dde">
+                                <rect key="frame" x="71" y="331" width="179" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="in" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="14" id="4KU-p6-0Nf">
-                                <rect key="frame" x="240" y="126" width="30" height="24"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="At 00:00 PM it will be" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="14" id="W78-YT-7bh">
+                                <rect key="frame" x="24" y="293" width="273" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nowhere" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="V3h-ej-GHW">
-                                <rect key="frame" x="20" y="171" width="280" height="44"/>
+                                <rect key="frame" x="40" y="146" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -75,24 +75,17 @@
                                     <action selector="updateButtonWasTapped:" destination="2" eventType="touchUpInside" id="b9g-bx-e3e"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="and the grid is " textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="jxu-gv-fSc">
-                                <rect key="frame" x="70" y="223" width="200" height="47"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="and the grid is " lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="jxu-gv-fSc">
+                                <rect key="frame" x="77" y="184" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="aVs-Gj-YRb">
-                                <rect key="frame" x="39" y="283" width="90" height="45"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.0% green." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="aVs-Gj-YRb">
+                                <rect key="frame" x="60" y="223" width="201" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="% green." lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="pv6-U8-ggh">
-                                <rect key="frame" x="131" y="278" width="123" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -100,6 +93,8 @@
                         <color key="backgroundColor" red="0.27704828440000001" green="0.51073593699999997" blue="0.73834145070000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="futurePercentGreenLabel" destination="clJ-NN-dde" id="3ml-es-nJi"/>
+                        <outlet property="futureTimeLabel" destination="W78-YT-7bh" id="Wxi-wx-PB9"/>
                         <outlet property="locationLabel" destination="V3h-ej-GHW" id="QWx-g7-suu"/>
                         <outlet property="percentGreenLabel" destination="aVs-Gj-YRb" id="y2A-if-8ge"/>
                         <outlet property="timeLabel" destination="sg0-QI-e12" id="aj0-Vv-sTy"/>
@@ -182,6 +177,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WTMainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="updateButtonWasTapped:"/>
+                <relationship kind="outlet" name="futurePercentGreenLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="futureTimeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentGreenLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
