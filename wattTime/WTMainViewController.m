@@ -62,7 +62,7 @@
                 NSNumber *percentGreen = [[result objectAtIndex:theHour] valueForKey:PERCENT_GREEN_KEY];
                 percentGreenLabel.text = [NSString stringWithFormat:@"%0.1f%% green.", [percentGreen floatValue]];
                 
-                // Extract element for next hour and update.  Rely on updateTimer to update futureTimeLabel
+                // Extract element for next hour and update.  Rely on updateTimer to update futureTimeLabel. DOES NOT WORK FOR 11PM!
                 NSInteger theNextHour = theHour + 1;
                 NSNumber *futurePercentGreen = [[result objectAtIndex:theNextHour] valueForKey:PERCENT_GREEN_KEY];
                 futurePercentGreenLabel.text = [NSString stringWithFormat:@"%0.1f%% green.", [futurePercentGreen floatValue]];
@@ -100,9 +100,15 @@
     timeLabel.text = [NSString stringWithFormat:@"It's %@ in", theCurrentHour];
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     
-    // Update the next hour label
+    // If time just advanced to the next hour, update green percentage
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
+    NSInteger theMinutes = [components minute];
+    if (theMinutes == 0) {
+        [self fetchDataAndUpdateDisplay];
+    }
+    
+    // Update the next hour label
     NSInteger theNextHour = [components hour] + 1;
     NSString *theNextHourLabelPartial;
     if (theNextHour < 12) {

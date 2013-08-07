@@ -8,7 +8,8 @@
 
 #import "WTFlipsideViewController.h"
 
-#define BASE_URL @"https://watttime.herokuapp.com/"
+//#define BASE_URL @"https://watttime.herokuapp.com/"
+#define BASE_URL @"http://watttime.com/"
 #define TODAY_REQUEST @"today?st="
 #define PERCENT_GREEN_KEY @"percent_green"
 
