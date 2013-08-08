@@ -116,7 +116,8 @@
     } else if (theNextHour < 23) {
         theNextHourLabelPartial = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%i:00 PM", theNextHour - 12]];
     } else {
-        theNextHourLabelPartial = [[NSString alloc] initWithString:@"12:00 AM"];
+        //theNextHourLabelPartial = [[NSString alloc] initWithString:@"12:00 AM"];
+        theNextHourLabelPartial = @"12:00 AM";
     }
     NSString *theNextHourLabel = [NSString stringWithFormat:@"At %@ it will be", theNextHourLabelPartial];
     futureTimeLabel.text = theNextHourLabel;
