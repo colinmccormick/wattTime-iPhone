@@ -57,7 +57,8 @@
     NSUInteger numberOfXTickLabels = [xTickLabels count];
     CGFloat xTickSpacing = xLength/(numberOfXTickLabels - 1);
 
-    NSArray *yTickLabels = [NSArray arrayWithObjects:@"0%", @"5%", @"10%", @"15%", @"20%", @"25%", @"30%", nil];
+    //NSArray *yTickLabels = [NSArray arrayWithObjects:@"0%", @"5%", @"10%", @"15%", @"20%", @"25%", @"30%", nil];
+    NSArray *yTickLabels = [self makeYTickLabelArray];
     NSUInteger numberOfYTickLabels = [yTickLabels count];
     CGFloat yTickSpacing = yLength/(numberOfYTickLabels - 1);
     
@@ -67,6 +68,9 @@
     CGContextAddLineToPoint(context, xLeft, yTop);
     CGContextMoveToPoint(context, xLeft, yBottom);
     CGContextAddLineToPoint(context, xRight, yBottom);
+  
+    CGContextSetLineWidth(context, 2);
+    CGContextDrawPath(context, kCGPathStroke);
     
     // Draw ticks
     CGContextSelectFont(context, "Arial", tickFontSize, kCGEncodingMacRoman);
@@ -96,30 +100,64 @@
     
     // Draw points
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    [formatter setTimeZone:[NSTimeZone localTimeZone]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSCalendar *calendar = [NSCalendar currentCalendar];
         
-    CGContextSetLineWidth(context, 1);
     CGFloat radius = 5.0;
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+    NSNumber *maxYValueNumber = [numberFormatter numberFromString:[yTickLabels lastObject]];
+    CGFloat maxYValue = 100 * [maxYValueNumber doubleValue];
     
     for (NSDictionary *point in self.chartPoints) {
         
-        NSDate *date = [formatter dateFromString:[point objectForKey:@"date"]];
+        NSDate *date = [dateFormatter dateFromString:[point objectForKey:@"date"]];
         NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
         NSNumber *hour = [NSNumber numberWithInt:[components hour]];
         NSNumber *minute = [NSNumber numberWithInt:[components minute]];
         CGFloat xPosition = xLeft + xLength * (([hour doubleValue] / 24) + ([minute doubleValue] / (60 * 24)));
         
         NSNumber *percent = [point objectForKey:@"percent"];
-        CGFloat yPostion = yBottom + yLength * ([percent doubleValue] / 30);
+        CGFloat yPostion = yBottom + yLength * ([percent doubleValue] / maxYValue);
         
         CGRect rect = CGRectMake(xPosition, yPostion, radius, radius);
         CGContextAddEllipseInRect(context, rect);
-        CGContextDrawPath(context, kCGPathStroke);
     }
+    
+    CGContextSetLineWidth(context, 1);
+    CGContextDrawPath(context, kCGPathStroke);
 }
 
+-(NSArray *)makeYTickLabelArray {
+    NSArray *labelArray = [NSArray arrayWithObjects:@"0%", @"20%", @"40%", @"60%", @"80%", @"100%", nil];
+    if ([self.chartPoints count] == 0) {
+        // No data
+        return labelArray;
+    } else {
+        NSArray *percentValues = [self.chartPoints valueForKey:@"percent"];
+        NSNumber *highestValue = [percentValues valueForKeyPath:@"@max.self"];
+        if (([highestValue doubleValue] > 100) || ([highestValue doubleValue] < 0)) {
+            // Data are corrupted
+            return labelArray;
+        }  else if ([highestValue doubleValue] < 5) {
+            return [NSArray arrayWithObjects:@"0%", @"1%", @"2%", @"3%", @"4%", @"5%", nil];
+        } else if ([highestValue doubleValue] < 10) {
+            return [NSArray arrayWithObjects:@"0%", @"2%", @"4%", @"6%", @"8%", @"10%", nil];
+        } else if ([highestValue doubleValue] < 20) {
+            return [NSArray arrayWithObjects:@"0%", @"4%", @"8%", @"12%", @"16%", @"20%", nil];
+        } else if ([highestValue doubleValue] < 25) {
+            return [NSArray arrayWithObjects:@"0%", @"5%", @"10%", @"15%", @"20%", @"25%", nil];
+        } else if ([highestValue doubleValue] < 50) {
+            return [NSArray arrayWithObjects:@"0%", @"10%", @"20%", @"30%", @"40%", @"50%", nil];
+        } else if ([highestValue doubleValue] < 75) {
+            return [NSArray arrayWithObjects:@"0%", @"15%", @"30%", @"45%", @"60%", @"75%", nil];
+        } else {
+            return labelArray;
+        }
+    }
+}
 
 @end

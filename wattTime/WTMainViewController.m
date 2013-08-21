@@ -27,7 +27,7 @@
     
     // Set up spinner to display while waiting for download
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.center = CGPointMake(160,240);
+    spinner.center = CGPointMake(160,180);
     spinner.hidesWhenStopped = YES;
     [self.view addSubview:spinner];
     [spinner startAnimating];

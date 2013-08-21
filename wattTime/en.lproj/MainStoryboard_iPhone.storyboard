@@ -65,8 +65,8 @@
                                     <action selector="updateButtonWasTapped:" destination="2" eventType="touchUpInside" id="b9g-bx-e3e"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="the grid is 0.0% green." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="aVs-Gj-YRb">
-                                <rect key="frame" x="36" y="345" width="251" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="the grid is 00.0% green." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="aVs-Gj-YRb">
+                                <rect key="frame" x="16" y="345" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.98823535442352295" green="0.97254908084869385" blue="0.89019614458084106" alpha="1" colorSpace="deviceRGB"/>
