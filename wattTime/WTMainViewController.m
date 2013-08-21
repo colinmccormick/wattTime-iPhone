@@ -47,34 +47,63 @@
 
         // Parse JSON
         NSError *error = nil;
-        NSArray *result = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+        NSArray *arrayOfJSONData = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
        
         // Put back on the main thread to use UIKit
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            // Extract elements of JSON array corresponding to the current and next hour (in default time zone) 
-            if (result) {            
-                // Extract element for current hour and update
-                NSDate *date = [NSDate date];
-                NSCalendar *calendar = [NSCalendar currentCalendar];
-                NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
-                NSInteger theHour = [components hour];
-                NSNumber *percentGreen = [[result objectAtIndex:theHour] valueForKey:PERCENT_GREEN_KEY];
-                percentGreenLabel.text = [NSString stringWithFormat:@"%0.1f%% green.", [percentGreen floatValue]];
-                
-                // Extract element for next hour and update.  Rely on updateTimer to update futureTimeLabel. DOES NOT WORK FOR 11PM!
-                NSInteger theNextHour = theHour + 1;
-                NSNumber *futurePercentGreen = [[result objectAtIndex:theNextHour] valueForKey:PERCENT_GREEN_KEY];
-                futurePercentGreenLabel.text = [NSString stringWithFormat:@"%0.1f%% green.", [futurePercentGreen floatValue]];
+            // Extract element of JSON array corresponding to the current time (in the app time zone)
+            if (arrayOfJSONData) {
+                NSDictionary *currentInterval = [self getCurrentIntervalDataFromJSONArray:arrayOfJSONData];
+                NSNumber *percentGreen = [currentInterval valueForKey:PERCENT_GREEN_KEY];
+                percentGreenLabel.text = [NSString stringWithFormat:PERCENT_GREEN_LABEL_STRING, [percentGreen floatValue]];
             } else {
                 NSLog(@"JSON parse error %@", error);
                 percentGreenLabel.text = @"N/A";
             }
+            
+            // Display JSON data on strip chart
+            [self loadDataFromJSONArrayIntoChart:arrayOfJSONData];
+            
             [spinner stopAnimating];
         });
-        
     });
     dispatch_release(fetch_queue);
+}
+
+// Extract correct data element from JSON array for current time (varies by ISO/RTO)
+- (NSDictionary *)getCurrentIntervalDataFromJSONArray:(NSArray *)arrayOfJSONData {
+    
+    // Set up date formatter to match JSON date strings
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setTimeZone:[NSTimeZone localTimeZone]];
+
+    // Search entries of JSON array
+    NSDate *currentTime = [NSDate date];
+    NSArray *arrayOfLocalTimes = [arrayOfJSONData valueForKey:LOCAL_TIME_KEY];
+    for (NSString *aTimeString in arrayOfLocalTimes) {
+        NSDate *intervalTime = [formatter dateFromString:aTimeString];
+        if ([currentTime earlierDate:intervalTime] == currentTime) {
+            // intervalTime is the first interval after currentTime, so we want previous entry
+            NSUInteger index = [arrayOfLocalTimes indexOfObject:aTimeString];
+            // Unless this is the first element in the array
+            index = (index == 0) ? 0 : index - 1;
+            return [arrayOfJSONData objectAtIndex:index];
+        }
+    }
+    // We ran through the entire arrayOfJSONData, so we want the last entry
+    return [arrayOfJSONData lastObject];
+}
+
+- (void)loadDataFromJSONArrayIntoChart:(NSArray *)arrayOfJSONData {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (NSDictionary *dictionary in arrayOfJSONData) {
+        NSDictionary *newDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[dictionary objectForKey:LOCAL_TIME_KEY], @"date", [dictionary objectForKey:PERCENT_GREEN_KEY], @"percent", nil];
+        [array addObject:newDictionary];
+    }
+    stripChart.chartPoints = array;
+    [stripChart setNeedsDisplay];
 }
 
 // Update currentLocation, the location label, and the default time zone
@@ -90,6 +119,7 @@
 
 // Update the time.  Update only every 5 seconds to reduce cost.
 - (void)updateTimer {
+    
     // Update time label
     [updateTimer invalidate];
     updateTimer = nil;
@@ -97,30 +127,16 @@
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *theCurrentHour = [timeFormatter stringFromDate:currentDate];
-    timeLabel.text = [NSString stringWithFormat:@"It's %@ in", theCurrentHour];
+    timeLabel.text = [NSString stringWithFormat:TIME_LABEL_STRING, theCurrentHour];
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     
     // If time just advanced to the next hour, update green percentage
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
-    NSInteger theMinutes = [components minute];
-    if (theMinutes == 0) {
-        [self fetchDataAndUpdateDisplay];
-    }
-    
-    // Update the next hour label
-    NSInteger theNextHour = [components hour] + 1;
-    NSString *theNextHourLabelPartial;
-    if (theNextHour < 12) {
-        theNextHourLabelPartial = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%i:00 AM", theNextHour]];
-    } else if (theNextHour < 23) {
-        theNextHourLabelPartial = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%i:00 PM", theNextHour - 12]];
-    } else {
-        //theNextHourLabelPartial = [[NSString alloc] initWithString:@"12:00 AM"];
-        theNextHourLabelPartial = @"12:00 AM";
-    }
-    NSString *theNextHourLabel = [NSString stringWithFormat:@"At %@ it will be", theNextHourLabelPartial];
-    futureTimeLabel.text = theNextHourLabel;
+    //NSCalendar *calendar = [NSCalendar currentCalendar];
+    //NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
+    //NSInteger theMinutes = [components minute];
+    //if (theMinutes == 0) {
+    //    [self fetchDataAndUpdateDisplay];
+    //}
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,6 +150,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Fix rounded corners on buttons
+    [[updateButton layer] setCornerRadius:8.0f];
+    [[updateButton layer] setMasksToBounds:YES];
+    [[updateButton layer] setBorderWidth:1.0f];
+    
+    [[whereButton layer] setCornerRadius:8.0f];
+    [[whereButton layer] setMasksToBounds:YES];
+    [[whereButton layer] setBorderWidth:1.0f];
     
     // Load state array
     NSBundle *bundle = [NSBundle mainBundle];
@@ -153,11 +178,11 @@
 
 - (void)viewDidUnload
 {
-    futureTimeLabel = nil;
-    futurePercentGreenLabel = nil;
+    updateButton = nil;
+    whereButton = nil;
+    stripChart = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    updateButton = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
