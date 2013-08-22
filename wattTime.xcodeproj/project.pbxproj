@@ -13,6 +13,7 @@
 		3B753BDD17B45C6C0011645C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B753BDC17B45C6C0011645C /* Default-568h@2x.png */; };
 		3B7D59F817A091B6001D3C3E /* WattTimeAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */; };
 		3B7D59FA17A091BA001D3C3E /* WattTimeAppIconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */; };
+		3B833C7B17C6824100F88647 /* WattTimeWordLogoNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B833C7A17C6824100F88647 /* WattTimeWordLogoNew.png */; };
 		3BC255FC17936A79008D2ABE /* States.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BC255FB17936A79008D2ABE /* States.plist */; };
 		3BEE633E1783A99300136BB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE633D1783A99300136BB7 /* UIKit.framework */; };
 		3BEE63401783A99300136BB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE633F1783A99300136BB7 /* Foundation.framework */; };
@@ -36,6 +37,7 @@
 		3B753BDC17B45C6C0011645C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WattTimeAppIcon.png; path = ../WattTimeAppIcon.png; sourceTree = "<group>"; };
 		3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WattTimeAppIconBig.png; path = ../WattTimeAppIconBig.png; sourceTree = "<group>"; };
+		3B833C7A17C6824100F88647 /* WattTimeWordLogoNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattTimeWordLogoNew.png; sourceTree = "<group>"; };
 		3BC255FB17936A79008D2ABE /* States.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = States.plist; sourceTree = "<group>"; };
 		3BEE63391783A99300136BB7 /* wattTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wattTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BEE633D1783A99300136BB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,7 @@
 				3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */,
 				3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */,
 				3B6607C717C44D1600BBD1C5 /* CreamButtonBackground.png */,
+				3B833C7A17C6824100F88647 /* WattTimeWordLogoNew.png */,
 				3B6607C517C4389200BBD1C5 /* WattTimeWhiteWordLogo.png */,
 				3BEE634E1783A99300136BB7 /* WTAppDelegate.h */,
 				3BEE634F1783A99300136BB7 /* WTAppDelegate.m */,
@@ -196,6 +199,7 @@
 				3B753BDD17B45C6C0011645C /* Default-568h@2x.png in Resources */,
 				3B6607C617C4389200BBD1C5 /* WattTimeWhiteWordLogo.png in Resources */,
 				3B6607C817C44D1600BBD1C5 /* CreamButtonBackground.png in Resources */,
+				3B833C7B17C6824100F88647 /* WattTimeWordLogoNew.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

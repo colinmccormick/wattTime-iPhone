@@ -10,7 +10,7 @@
 		<key>Time zone</key>
 		<string>America/Los_Angeles</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Name</key>
 		<string>Connecticut</string>
 		<key>Abbreviation</key>
@@ -18,15 +18,15 @@
 		<key>Time zone</key>
 		<string>America/New_York</string>
 	</dict>
-    <dict>
-        <key>Name</key>
-        <string>Idaho</string>
-        <key>Abbreviation</key>
-        <string>ID</string>
-        <key>Time zone</key>
-        <string>America/Denver</string>
-    </dict>
-    <dict>
+	<dict>
+		<key>Name</key>
+		<string>Idaho</string>
+		<key>Abbreviation</key>
+		<string>ID</string>
+		<key>Time zone</key>
+		<string>America/Denver</string>
+	</dict>
+	<dict>
 		<key>Name</key>
 		<string>Maine</string>
 		<key>Abbreviation</key>
@@ -42,7 +42,7 @@
 		<key>Time zone</key>
 		<string>America/New_York</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Name</key>
 		<string>New Hampshire</string>
 		<key>Abbreviation</key>
@@ -58,7 +58,7 @@
 		<key>Time zone</key>
 		<string>America/Los_Angeles</string>
 	</dict>
-    <dict>
+	<dict>
 		<key>Name</key>
 		<string>Rhode Island</string>
 		<key>Abbreviation</key>

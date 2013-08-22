@@ -1,6 +1,6 @@
 //
 //  WTFlipsideViewController.m
-//  wattTime v0.1
+//  wattTime v0.2
 //
 //  Created by Colin McCormick on 7/2/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
@@ -30,14 +30,17 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - Label
+#pragma mark - My methods
+
+- (IBAction)goToWattTimeWebsite:(id)sender {
+    NSURL *url = [NSURL URLWithString:BASE_URL];
+    [[UIApplication sharedApplication] openURL:url];
+}
 
 -(void)updateLocation:(NSString *)location {
     self.currentLocation = location;
     self.locationLabel.text = location;
 }
-
-#pragma mark - Picker
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
@@ -65,6 +68,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     // Now that all views are loaded, update the location label text
     self.locationLabel.text = self.currentLocation;
+    
+    // Fix rounded corners on button
+    [[websiteButton layer] setCornerRadius:8.0f];
+    [[websiteButton layer] setMasksToBounds:YES];
+    [[websiteButton layer] setBorderWidth:1.0f];
 }
 
 - (void)viewDidUnload
