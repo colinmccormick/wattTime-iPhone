@@ -3,7 +3,7 @@
 //  wattTime
 //
 //  Created by Colin McCormick on 7/2/13.
-//  Copyright (c) 2013 Novodox. All rights reserved.
+//  Copyright (c) 2013 wattTime. All rights reserved.
 //
 
 #import "WTAppDelegate.h"

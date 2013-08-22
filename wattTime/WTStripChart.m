@@ -31,43 +31,43 @@
     CGContextScaleCTM(context, 1, -1);
     
     // Set scaling factors
-    CGFloat xLeftBound = 0.1;
-    CGFloat xRightBound = 0.05;
-    CGFloat yBottomBound = 0.1;
-    CGFloat yTopBound = 0.1;
+    CGFloat xLeftPadding = 0.1;
+    CGFloat xRightPadding = 0.05;
+    CGFloat yBottomPadding = 0.1;
+    CGFloat yTopPadding = 0.1;
     
-    CGFloat tickFontSize = 8;
+    CGFloat tickFontSize = 10;
     CGFloat xTickHeight = 3;
     CGFloat yTickWidth = 3;
     CGFloat xTickLabelHorizontalOffset = 12;
-    CGFloat xTickLabelVerticalOffset = 0.5 * yBottomBound * myBounds.size.height + 0.5 * tickFontSize;
-    CGFloat yTickLabelHorizontalOffset = 0.5 *xLeftBound * myBounds.size.width + 0.5 * tickFontSize;
+    CGFloat xTickLabelVerticalOffset = 0.5 * yBottomPadding * myBounds.size.height + 0.5 * tickFontSize;
+    CGFloat yTickLabelHorizontalOffset = 0.5 * xLeftPadding * myBounds.size.width + 1.0 * tickFontSize;
     CGFloat yTickLabelVerticalOffset = tickFontSize/2;
     
     // Calculate axis points and lengths
-    CGFloat xLeft = xLeftBound * myBounds.size.width;
-    CGFloat xRight = (1-xRightBound) * myBounds.size.width;
-    CGFloat xLength = xRight - xLeft;
-    CGFloat yBottom = yBottomBound * myBounds.size.height;
-    CGFloat yTop = (1-yTopBound) * myBounds.size.height;
-    CGFloat yLength = yTop - yBottom;
+    CGFloat xLeftEdge = xLeftPadding * myBounds.size.width;
+    CGFloat xRightEdge = (1-xRightPadding) * myBounds.size.width;
+    CGFloat xAxisLength = xRightEdge - xLeftEdge;
+    CGFloat yBottomEdge = yBottomPadding * myBounds.size.height;
+    CGFloat yTopEdge = (1-yTopPadding) * myBounds.size.height;
+    CGFloat yAxisLength = yTopEdge - yBottomEdge;
  
     // Set up tick label arrays
     NSArray *xTickLabels = [NSArray arrayWithObjects:@"12AM", @"3AM", @"6AM", @"9AM", @"12PM", @"3PM", @"6PM", @"9PM", @"12AM", nil];
     NSUInteger numberOfXTickLabels = [xTickLabels count];
-    CGFloat xTickSpacing = xLength/(numberOfXTickLabels - 1);
+    CGFloat xTickSpacing = xAxisLength/(numberOfXTickLabels - 1);
 
     //NSArray *yTickLabels = [NSArray arrayWithObjects:@"0%", @"5%", @"10%", @"15%", @"20%", @"25%", @"30%", nil];
     NSArray *yTickLabels = [self makeYTickLabelArray];
     NSUInteger numberOfYTickLabels = [yTickLabels count];
-    CGFloat yTickSpacing = yLength/(numberOfYTickLabels - 1);
+    CGFloat yTickSpacing = yAxisLength/(numberOfYTickLabels - 1);
     
     // Draw axes
     CGContextBeginPath(context);
-    CGContextMoveToPoint(context, xLeft, yBottom);
-    CGContextAddLineToPoint(context, xLeft, yTop);
-    CGContextMoveToPoint(context, xLeft, yBottom);
-    CGContextAddLineToPoint(context, xRight, yBottom);
+    CGContextMoveToPoint(context, xLeftEdge, yBottomEdge);
+    CGContextAddLineToPoint(context, xLeftEdge, yTopEdge);
+    CGContextMoveToPoint(context, xLeftEdge, yBottomEdge);
+    CGContextAddLineToPoint(context, xRightEdge, yBottomEdge);
   
     CGContextSetLineWidth(context, 2);
     CGContextDrawPath(context, kCGPathStroke);
@@ -75,21 +75,21 @@
     // Draw ticks
     CGContextSelectFont(context, "Arial", tickFontSize, kCGEncodingMacRoman);
     
-    CGFloat xTickHorizontalLocation = xLeft;
+    CGFloat xTickHorizontalLocation = xLeftEdge;
     for (NSString *xTickLabel in xTickLabels) {
-        CGContextMoveToPoint(context, xTickHorizontalLocation, yBottom + xTickHeight/2);
-        CGContextAddLineToPoint(context, xTickHorizontalLocation, yBottom - xTickHeight/2);
+        CGContextMoveToPoint(context, xTickHorizontalLocation, yBottomEdge + xTickHeight/2);
+        CGContextAddLineToPoint(context, xTickHorizontalLocation, yBottomEdge - xTickHeight/2);
         CGFloat xTickLabelHorizontalLocation = xTickHorizontalLocation - xTickLabelHorizontalOffset;
-        CGFloat xTickLabelVerticalLocation = yBottom - xTickLabelVerticalOffset;
+        CGFloat xTickLabelVerticalLocation = yBottomEdge - xTickLabelVerticalOffset;
         CGContextShowTextAtPoint(context, xTickLabelHorizontalLocation, xTickLabelVerticalLocation, [xTickLabel UTF8String], [xTickLabel length]);
         xTickHorizontalLocation += xTickSpacing;
     };
     
-    CGFloat yTickVerticalLocation = yBottom;
+    CGFloat yTickVerticalLocation = yBottomEdge;
     for (NSString *yTickLabel in yTickLabels) {
-        CGContextMoveToPoint(context, xLeft - yTickWidth/2, yTickVerticalLocation);
-        CGContextAddLineToPoint(context, xLeft + yTickWidth/2, yTickVerticalLocation);
-        CGFloat yTickLabelHorizontalLocation = xLeft - yTickLabelHorizontalOffset;
+        CGContextMoveToPoint(context, xLeftEdge - yTickWidth/2, yTickVerticalLocation);
+        CGContextAddLineToPoint(context, xLeftEdge + yTickWidth/2, yTickVerticalLocation);
+        CGFloat yTickLabelHorizontalLocation = xLeftEdge - yTickLabelHorizontalOffset;
         CGFloat yTickLabelVerticalLocation = yTickVerticalLocation - yTickLabelVerticalOffset;
         CGContextShowTextAtPoint(context, yTickLabelHorizontalLocation, yTickLabelVerticalLocation, [yTickLabel UTF8String], [yTickLabel length]);
         yTickVerticalLocation += yTickSpacing;
@@ -118,10 +118,10 @@
         NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
         NSNumber *hour = [NSNumber numberWithInt:[components hour]];
         NSNumber *minute = [NSNumber numberWithInt:[components minute]];
-        CGFloat xPosition = xLeft + xLength * (([hour doubleValue] / 24) + ([minute doubleValue] / (60 * 24)));
+        CGFloat xPosition = xLeftEdge + xAxisLength * (([hour doubleValue] / 24) + ([minute doubleValue] / (60 * 24)));
         
         NSNumber *percent = [point objectForKey:@"percent"];
-        CGFloat yPostion = yBottom + yLength * ([percent doubleValue] / maxYValue);
+        CGFloat yPostion = yBottomEdge + yAxisLength * ([percent doubleValue] / maxYValue);
         
         CGRect rect = CGRectMake(xPosition, yPostion, radius, radius);
         CGContextAddEllipseInRect(context, rect);
@@ -129,10 +129,18 @@
     
     CGContextSetLineWidth(context, 1);
     CGContextDrawPath(context, kCGPathStroke);
+    
+    // Draw current time line
+    // Need to implement this
+    
 }
 
 -(NSArray *)makeYTickLabelArray {
-    NSArray *labelArray = [NSArray arrayWithObjects:@"0%", @"20%", @"40%", @"60%", @"80%", @"100%", nil];
+    
+    // Specify number of ticks, not including 0% at origin
+    int numberOfTicks = 4;
+    
+    NSArray *labelArray = [NSArray arrayWithObjects:@"0%", @"25%", @"50%", @"75%", @"100%", nil];
     if ([self.chartPoints count] == 0) {
         // No data
         return labelArray;
@@ -142,20 +150,14 @@
         if (([highestValue doubleValue] > 100) || ([highestValue doubleValue] < 0)) {
             // Data are corrupted
             return labelArray;
-        }  else if ([highestValue doubleValue] < 5) {
-            return [NSArray arrayWithObjects:@"0%", @"1%", @"2%", @"3%", @"4%", @"5%", nil];
-        } else if ([highestValue doubleValue] < 10) {
-            return [NSArray arrayWithObjects:@"0%", @"2%", @"4%", @"6%", @"8%", @"10%", nil];
-        } else if ([highestValue doubleValue] < 20) {
-            return [NSArray arrayWithObjects:@"0%", @"4%", @"8%", @"12%", @"16%", @"20%", nil];
-        } else if ([highestValue doubleValue] < 25) {
-            return [NSArray arrayWithObjects:@"0%", @"5%", @"10%", @"15%", @"20%", @"25%", nil];
-        } else if ([highestValue doubleValue] < 50) {
-            return [NSArray arrayWithObjects:@"0%", @"10%", @"20%", @"30%", @"40%", @"50%", nil];
-        } else if ([highestValue doubleValue] < 75) {
-            return [NSArray arrayWithObjects:@"0%", @"15%", @"30%", @"45%", @"60%", @"75%", nil];
         } else {
-            return labelArray;
+            int labelIncrement = ceil([highestValue doubleValue]/numberOfTicks);
+            NSMutableArray *newLabelArray = [NSMutableArray array];
+            for (int n = 0; n <= numberOfTicks; n++) {
+                NSString *label = [NSString stringWithFormat:@"%d%%", n * labelIncrement];
+                [newLabelArray addObject:label];
+            }
+            return newLabelArray;
         }
     }
 }

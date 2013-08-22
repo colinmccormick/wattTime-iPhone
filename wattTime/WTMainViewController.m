@@ -68,7 +68,7 @@
             [spinner stopAnimating];
         });
     });
-    dispatch_release(fetch_queue);
+    //dispatch_release(fetch_queue);
 }
 
 // Extract correct data element from JSON array for current time (varies by ISO/RTO)
@@ -129,14 +129,6 @@
     NSString *theCurrentHour = [timeFormatter stringFromDate:currentDate];
     timeLabel.text = [NSString stringWithFormat:TIME_LABEL_STRING, theCurrentHour];
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
-    
-    // If time just advanced to the next hour, update green percentage
-    //NSCalendar *calendar = [NSCalendar currentCalendar];
-    //NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
-    //NSInteger theMinutes = [components minute];
-    //if (theMinutes == 0) {
-    //    [self fetchDataAndUpdateDisplay];
-    //}
 }
 
 - (void)didReceiveMemoryWarning
@@ -230,7 +222,8 @@
 - (void)flipsideViewControllerDidFinish:(WTFlipsideViewController *)controller
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self dismissModalViewControllerAnimated:YES];
+        //[self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self.flipsidePopoverController dismissPopoverAnimated:YES];
         self.flipsidePopoverController = nil;
