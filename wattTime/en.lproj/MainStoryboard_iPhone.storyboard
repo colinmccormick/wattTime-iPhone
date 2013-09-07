@@ -131,7 +131,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="QZL-M2-7y5">
             <objects>
-                <tabBarController id="abz-me-O2B" customClass="WTTabBarController" sceneMemberID="viewController">
+                <tabBarController id="abz-me-O2B" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="9zv-Fa-C0e">
@@ -174,9 +174,6 @@
         </class>
         <class className="WTStripChart" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WTStripChart.h"/>
-        </class>
-        <class className="WTTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WTTabBarController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B005AA117D9638900F541D5 /* WTDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B005AA017D9638900F541D5 /* WTDataModel.m */; };
-		3B45048917CFDB7200AC0307 /* WTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B45048817CFDB7200AC0307 /* WTTabBarController.m */; };
 		3B6607BC17C40C1F00BBD1C5 /* WTStripChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */; };
 		3B6607C617C4389200BBD1C5 /* WattTimeWhiteWordLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6607C517C4389200BBD1C5 /* WattTimeWhiteWordLogo.png */; };
 		3B6607C817C44D1600BBD1C5 /* CreamButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6607C717C44D1600BBD1C5 /* CreamButtonBackground.png */; };
@@ -36,8 +35,6 @@
 /* Begin PBXFileReference section */
 		3B005A9F17D9638900F541D5 /* WTDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDataModel.h; sourceTree = "<group>"; };
 		3B005AA017D9638900F541D5 /* WTDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDataModel.m; sourceTree = "<group>"; };
-		3B45048717CFDB7200AC0307 /* WTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTabBarController.h; sourceTree = "<group>"; };
-		3B45048817CFDB7200AC0307 /* WTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTabBarController.m; sourceTree = "<group>"; };
 		3B6607BA17C40C1F00BBD1C5 /* WTStripChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTStripChart.h; sourceTree = "<group>"; };
 		3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTStripChart.m; sourceTree = "<group>"; };
 		3B6607C517C4389200BBD1C5 /* WattTimeWhiteWordLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattTimeWhiteWordLogo.png; sourceTree = "<group>"; };
@@ -130,8 +127,6 @@
 				3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */,
 				3BEE63461783A99300136BB7 /* Supporting Files */,
 				3BC255FB17936A79008D2ABE /* States.plist */,
-				3B45048717CFDB7200AC0307 /* WTTabBarController.h */,
-				3B45048817CFDB7200AC0307 /* WTTabBarController.m */,
 			);
 			path = wattTime;
 			sourceTree = "<group>";
@@ -235,7 +230,6 @@
 				3BEE635C1783A99300136BB7 /* WTMainViewController.m in Sources */,
 				3B6607BC17C40C1F00BBD1C5 /* WTStripChart.m in Sources */,
 				3B7E686017CBC06C002FCED7 /* WTShiftViewController.m in Sources */,
-				3B45048917CFDB7200AC0307 /* WTTabBarController.m in Sources */,
 				3B005AA117D9638900F541D5 /* WTDataModel.m in Sources */,
 				3B8C474617DBE23C00453553 /* WTLocationViewController.m in Sources */,
 			);
