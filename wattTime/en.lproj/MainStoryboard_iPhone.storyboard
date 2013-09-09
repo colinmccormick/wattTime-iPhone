@@ -7,6 +7,7 @@
         <!--Main View Controller - Green grid amount-->
         <scene sceneID="5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="WTMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -40,21 +41,38 @@
                             <view contentMode="scaleToFill" id="Gea-qo-Qrf" customClass="WTStripChart">
                                 <rect key="frame" x="10" y="70" width="300" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" text="Tap to update" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNw-JM-p2B">
+                                        <rect key="frame" x="220" y="0.0" width="75" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.98823535439999999" green="0.97254908080000002" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QIN-ff-05Z" appends="YES" id="kFs-Dv-zdy"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20392158627510071" green="0.80000007152557373" blue="0.60000002384185791" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Graph" id="Hs8-Tq-0KC"/>
+                    <tabBarItem key="tabBarItem" title="Graph" image="tabBarMainIcon.png" id="Hs8-Tq-0KC"/>
                     <navigationItem key="navigationItem" title="Green grid amount" id="6UX-5K-2Ep"/>
                     <connections>
                         <outlet property="locationLabel" destination="V3h-ej-GHW" id="QWx-g7-suu"/>
                         <outlet property="percentGreenLabel" destination="aVs-Gj-YRb" id="y2A-if-8ge"/>
                         <outlet property="stripChart" destination="Gea-qo-Qrf" id="N9y-Fc-a6b"/>
+                        <outlet property="stripChartTapGestureRecognizer" destination="QIN-ff-05Z" id="61g-XC-RSb"/>
                         <outlet property="timeLabel" destination="sg0-QI-e12" id="aj0-Vv-sTy"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QIN-ff-05Z">
+                    <connections>
+                        <action selector="stripChartWasTapped:" destination="2" id="c3x-kl-jwX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="477" y="-60"/>
         </scene>
@@ -95,7 +113,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20392158627510071" green="0.80000007152557373" blue="0.60000002384185791" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Location" id="mUJ-XO-wXM"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="tabBarLocationIcon.png" id="mUJ-XO-wXM"/>
                     <navigationItem key="navigationItem" title="Location" id="zHU-BQ-lVa"/>
                     <connections>
                         <outlet property="delegate" destination="2" id="15"/>
@@ -122,7 +140,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20392158630000001" green="0.80000007149999997" blue="0.60000002379999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shift" id="e6f-uF-Mdv"/>
+                    <tabBarItem key="tabBarItem" title="Shift" image="tabBarShiftIcon.png" id="e6f-uF-Mdv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scb-oj-ueH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,6 +169,9 @@
     </scenes>
     <resources>
         <image name="WattTimeWordLogoNew.png" width="500" height="105"/>
+        <image name="tabBarLocationIcon.png" width="30" height="30"/>
+        <image name="tabBarMainIcon.png" width="30" height="30"/>
+        <image name="tabBarShiftIcon.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="WTLocationViewController" superclassName="UIViewController">
@@ -163,9 +184,11 @@
         <class className="WTMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WTMainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="stripChartWasTapped:"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="percentGreenLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="stripChart" candidateClass="WTStripChart"/>
+                <relationship kind="outlet" name="stripChartTapGestureRecognizer" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

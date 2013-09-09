@@ -17,6 +17,9 @@
 		3B7E686017CBC06C002FCED7 /* WTShiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E685F17CBC06C002FCED7 /* WTShiftViewController.m */; };
 		3B833C7B17C6824100F88647 /* WattTimeWordLogoNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B833C7A17C6824100F88647 /* WattTimeWordLogoNew.png */; };
 		3B8C474617DBE23C00453553 /* WTLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C474517DBE23C00453553 /* WTLocationViewController.m */; };
+		3B97A05C17DCE80100CC4FEA /* tabBarMainIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */; };
+		3B97A05E17DCE8C600CC4FEA /* tabBarShiftIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B97A05D17DCE8C600CC4FEA /* tabBarShiftIcon.png */; };
+		3B97A06017DCE95F00CC4FEA /* tabBarLocationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B97A05F17DCE95F00CC4FEA /* tabBarLocationIcon.png */; };
 		3BC255FC17936A79008D2ABE /* States.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BC255FB17936A79008D2ABE /* States.plist */; };
 		3BE3D8CC17CD015500FD0F62 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BE3D8CB17CD015500FD0F62 /* Default@2x.png */; };
 		3BEE633E1783A99300136BB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEE633D1783A99300136BB7 /* UIKit.framework */; };
@@ -47,6 +50,9 @@
 		3B833C7A17C6824100F88647 /* WattTimeWordLogoNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattTimeWordLogoNew.png; sourceTree = "<group>"; };
 		3B8C474417DBE23C00453553 /* WTLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLocationViewController.h; sourceTree = "<group>"; };
 		3B8C474517DBE23C00453553 /* WTLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLocationViewController.m; sourceTree = "<group>"; };
+		3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarMainIcon.png; sourceTree = "<group>"; };
+		3B97A05D17DCE8C600CC4FEA /* tabBarShiftIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarShiftIcon.png; sourceTree = "<group>"; };
+		3B97A05F17DCE95F00CC4FEA /* tabBarLocationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarLocationIcon.png; sourceTree = "<group>"; };
 		3BC255FB17936A79008D2ABE /* States.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = States.plist; sourceTree = "<group>"; };
 		3BE3D8CB17CD015500FD0F62 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3BEE63391783A99300136BB7 /* wattTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wattTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,10 +143,13 @@
 				3BE3D8CB17CD015500FD0F62 /* Default@2x.png */,
 				3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */,
 				3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */,
+				3B97A05D17DCE8C600CC4FEA /* tabBarShiftIcon.png */,
 				3B753BDC17B45C6C0011645C /* Default-568h@2x.png */,
 				3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */,
 				3B6607C717C44D1600BBD1C5 /* CreamButtonBackground.png */,
+				3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */,
 				3B833C7A17C6824100F88647 /* WattTimeWordLogoNew.png */,
+				3B97A05F17DCE95F00CC4FEA /* tabBarLocationIcon.png */,
 				3B6607C517C4389200BBD1C5 /* WattTimeWhiteWordLogo.png */,
 				3BEE634E1783A99300136BB7 /* WTAppDelegate.h */,
 				3BEE634F1783A99300136BB7 /* WTAppDelegate.m */,
@@ -214,6 +223,9 @@
 				3B6607C817C44D1600BBD1C5 /* CreamButtonBackground.png in Resources */,
 				3B833C7B17C6824100F88647 /* WattTimeWordLogoNew.png in Resources */,
 				3BE3D8CC17CD015500FD0F62 /* Default@2x.png in Resources */,
+				3B97A05C17DCE80100CC4FEA /* tabBarMainIcon.png in Resources */,
+				3B97A05E17DCE8C600CC4FEA /* tabBarShiftIcon.png in Resources */,
+				3B97A06017DCE95F00CC4FEA /* tabBarLocationIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 #define TODAY_REQUEST @"today?st="
 #define PERCENT_GREEN_KEY @"percent_green"
 #define LOCAL_TIME_KEY @"local_time"
+#define JSON_DATE_FORMAT @"yyyy-MM-dd HH:mm"
 
 @interface WTDataModel : NSObject
 

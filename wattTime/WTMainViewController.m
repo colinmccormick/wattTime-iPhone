@@ -12,6 +12,11 @@
 
 #pragma mark - My methods
 
+// Strip chart was tapped.  Update display.
+- (IBAction)stripChartWasTapped:(id)sender {
+    [self updateDisplay];
+}
+
 // Update the time.  Update only every 5 seconds to reduce cost.
 - (void)updateTimer {
     [updateTimer invalidate];
@@ -66,7 +71,7 @@
 
     // Set up date formatter to match JSON date strings
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setDateFormat:JSON_DATE_FORMAT];
     [formatter setTimeZone:[NSTimeZone localTimeZone]];
 
     // Search entries of interval array

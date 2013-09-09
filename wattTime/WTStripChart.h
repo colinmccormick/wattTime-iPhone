@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define DATE_FORMAT @"yyyy-MM-dd HH:mm"
+
 @interface WTStripChart : UIView
 
 @property (strong, nonatomic) NSArray *chartPoints;

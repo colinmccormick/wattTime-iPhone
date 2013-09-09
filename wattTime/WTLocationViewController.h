@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
 #import "WTAppDelegate.h"
-
-#define BASE_URL @"http://watttime.com/"
 
 @interface WTLocationViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
     __weak IBOutlet UIPickerView *pickerView;

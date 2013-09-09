@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 wattTime. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "WTAppDelegate.h"
 #import "WTStripChart.h"
 
@@ -25,9 +24,11 @@
     NSTimer *updateTimer;
 }
 
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *stripChartTapGestureRecognizer;
+
 - (void)updateTimer;
 - (void)updateDisplay;
 - (void)loadIntervalDataIntoChart:(NSArray *)arrayOfIntervalData;
 - (NSDictionary *)getCurrentIntervalData:(NSArray *)arrayOfIntervalData;
-
+- (IBAction)stripChartWasTapped:(id)sender;
 @end

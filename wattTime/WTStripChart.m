@@ -35,7 +35,6 @@
     CGFloat xRightPadding = 0.05;
     CGFloat yBottomPadding = 0.1;
     CGFloat yTopPadding = 0.1;
-    
     CGFloat tickFontSize = 10;
     CGFloat xTickHeight = 3;
     CGFloat yTickWidth = 3;
@@ -56,8 +55,6 @@
     NSArray *xTickLabels = [NSArray arrayWithObjects:@"12AM", @"3AM", @"6AM", @"9AM", @"12PM", @"3PM", @"6PM", @"9PM", @"12AM", nil];
     NSUInteger numberOfXTickLabels = [xTickLabels count];
     CGFloat xTickSpacing = xAxisLength/(numberOfXTickLabels - 1);
-
-    //NSArray *yTickLabels = [NSArray arrayWithObjects:@"0%", @"5%", @"10%", @"15%", @"20%", @"25%", @"30%", nil];
     NSArray *yTickLabels = [self makeYTickLabelArray];
     NSUInteger numberOfYTickLabels = [yTickLabels count];
     CGFloat yTickSpacing = yAxisLength/(numberOfYTickLabels - 1);
@@ -68,13 +65,11 @@
     CGContextAddLineToPoint(context, xLeftEdge, yTopEdge);
     CGContextMoveToPoint(context, xLeftEdge, yBottomEdge);
     CGContextAddLineToPoint(context, xRightEdge, yBottomEdge);
-  
     CGContextSetLineWidth(context, 2);
     CGContextDrawPath(context, kCGPathStroke);
     
     // Draw ticks
     CGContextSelectFont(context, "Arial", tickFontSize, kCGEncodingMacRoman);
-    
     CGFloat xTickHorizontalLocation = xLeftEdge;
     for (NSString *xTickLabel in xTickLabels) {
         CGContextMoveToPoint(context, xTickHorizontalLocation, yBottomEdge + xTickHeight/2);
@@ -84,7 +79,6 @@
         CGContextShowTextAtPoint(context, xTickLabelHorizontalLocation, xTickLabelVerticalLocation, [xTickLabel UTF8String], [xTickLabel length]);
         xTickHorizontalLocation += xTickSpacing;
     };
-    
     CGFloat yTickVerticalLocation = yBottomEdge;
     for (NSString *yTickLabel in yTickLabels) {
         CGContextMoveToPoint(context, xLeftEdge - yTickWidth/2, yTickVerticalLocation);
@@ -94,35 +88,28 @@
         CGContextShowTextAtPoint(context, yTickLabelHorizontalLocation, yTickLabelVerticalLocation, [yTickLabel UTF8String], [yTickLabel length]);
         yTickVerticalLocation += yTickSpacing;
     }
-    
     CGContextSetLineWidth(context, 2);
     CGContextDrawPath(context, kCGPathStroke);
     
-    // Draw points
-    
+    // Draw chart points
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:DATE_FORMAT];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-        
     CGFloat radius = 5.0;
-    
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterPercentStyle];
     NSNumber *maxYValueNumber = [numberFormatter numberFromString:[yTickLabels lastObject]];
     CGFloat maxYValue = 100 * [maxYValueNumber doubleValue];
     
     for (NSDictionary *point in self.chartPoints) {
-        
         NSDate *date = [dateFormatter dateFromString:[point objectForKey:@"date"]];
         NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
         NSNumber *hour = [NSNumber numberWithInt:[components hour]];
         NSNumber *minute = [NSNumber numberWithInt:[components minute]];
         CGFloat xPosition = xLeftEdge + xAxisLength * (([hour doubleValue] / 24) + ([minute doubleValue] / (60 * 24)));
-        
         NSNumber *percent = [point objectForKey:@"percent"];
         CGFloat yPostion = yBottomEdge + yAxisLength * ([percent doubleValue] / maxYValue);
-        
         CGRect rect = CGRectMake(xPosition, yPostion, radius, radius);
         CGContextAddEllipseInRect(context, rect);
     }
@@ -130,16 +117,23 @@
     CGContextSetLineWidth(context, 1);
     CGContextDrawPath(context, kCGPathStroke);
     
-    // Draw current time line
-    // Need to implement this
-    
+    // Draw line for current time
+    NSDate *currentDate = [NSDate date];
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
+    NSNumber *currentHour = [NSNumber numberWithInt:[components hour]];
+    NSNumber *currentMinute = [NSNumber numberWithInt:[components minute]];
+    CGFloat xPosition = xLeftEdge + xAxisLength * (([currentHour doubleValue] /24) + ([currentMinute doubleValue] / (60 * 24)));
+    CGContextMoveToPoint(context, xPosition, yBottomEdge);
+    CGContextAddLineToPoint(context, xPosition, yTopEdge);
+    CGContextSetLineWidth(context, 1);
+    CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
+    CGContextDrawPath(context, kCGPathStroke);
 }
 
 -(NSArray *)makeYTickLabelArray {
     
     // Specify number of ticks, not including 0% at origin
     int numberOfTicks = 4;
-    
     NSArray *labelArray = [NSArray arrayWithObjects:@"0%", @"25%", @"50%", @"75%", @"100%", nil];
     if ([self.chartPoints count] == 0) {
         // No data
