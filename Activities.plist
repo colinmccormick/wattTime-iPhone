@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>chargeEV</string>
+		<key>MyDescription</key>
+		<string>Charging my EV</string>
+		<key>YourDescription</key>
+		<string>charge your EV</string>
+		<key>Length</key>
+		<real>8</real>
+		<key>Power</key>
+		<real>5000</real>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>washDryClothes</string>
+		<key>MyDescription</key>
+		<string>Washing/drying my clothes</string>
+		<key>YourDescription</key>
+		<string>wash/dry your clothes</string>
+		<key>Length</key>
+		<real>2</real>
+		<key>Power</key>
+		<real>4000</real>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>washDishes</string>
+		<key>MyDescription</key>
+		<string>Washing my dishes</string>
+		<key>YourDescription</key>
+		<string>wash your dishes</string>
+		<key>Length</key>
+		<real>1</real>
+		<key>Power</key>
+		<real>500</real>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>chargePhone</string>
+		<key>MyDescription</key>
+		<string>Charging my phone</string>
+		<key>YourDescription</key>
+		<string>charge your phone</string>
+		<key>Length</key>
+		<real>1.5</real>
+		<key>Power</key>
+		<real>25</real>
+	</dict>
+</array>
+</plist>

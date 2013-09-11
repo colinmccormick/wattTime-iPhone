@@ -9,6 +9,8 @@
 		<string>CA</string>
 		<key>Time zone</key>
 		<string>America/Los_Angeles</string>
+        <key>ISO</key>
+        <string>CAISO</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -17,6 +19,8 @@
 		<string>CT</string>
 		<key>Time zone</key>
 		<string>America/New_York</string>
+        <key>ISO</key>
+        <string>ISONE</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -25,6 +29,8 @@
 		<string>ID</string>
 		<key>Time zone</key>
 		<string>America/Denver</string>
+        <key>ISO</key>
+        <string>BPA</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -33,6 +39,8 @@
 		<string>ME</string>
 		<key>Time zone</key>
 		<string>America/New_York</string>
+        <key>ISO</key>
+        <string>ISONE</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -41,6 +49,8 @@
 		<string>MA</string>
 		<key>Time zone</key>
 		<string>America/New_York</string>
+        <key>ISO</key>
+        <string>ISONE</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -49,6 +59,8 @@
 		<string>NH</string>
 		<key>Time zone</key>
 		<string>America/New_York</string>
+        <key>ISO</key>
+        <string>ISONE</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -57,6 +69,8 @@
 		<string>OR</string>
 		<key>Time zone</key>
 		<string>America/Los_Angeles</string>
+        <key>ISO</key>
+        <string>BPA</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -65,6 +79,8 @@
 		<string>RI</string>
 		<key>Time zone</key>
 		<string>America/New_York</string>
+        <key>ISO</key>
+        <string>ISONE</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -73,6 +89,8 @@
 		<string>VT</string>
 		<key>Time zone</key>
 		<string>America/New_York</string>
+        <key>ISO</key>
+        <string>ISONE</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -81,6 +99,8 @@
 		<string>WA</string>
 		<key>Time zone</key>
 		<string>America/Los_Angeles</string>
+        <key>ISO</key>
+        <string>BPA</string>
 	</dict>
 </array>
 </plist>

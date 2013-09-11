@@ -15,5 +15,6 @@
 @property (strong, nonatomic) WTDataModel *dataModel;
 
 - (NSURL *)applicationDocumentsDirectory;
+- (void)customizeAppearance;
 
 @end

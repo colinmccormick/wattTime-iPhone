@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) NSArray *chartPoints;
 
--(NSArray *)makeYTickLabelArray;
+- (NSArray *)makeYTickLabelArray;
 
 @end

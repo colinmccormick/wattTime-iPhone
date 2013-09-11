@@ -12,18 +12,19 @@
 
 @synthesize locationArray = _locationArray;
 @synthesize currentLocation = _currentLocation;
+@synthesize activityArray = _activityArray;
 
 #pragma mark - My methods
 
-// Initialize the data model with locationArray and currentLocation
+// Initialize the data model with locationArray, currentLocation and activityArray
 - (id)init {
 
     if (self = [super init]) {
         // Load state array
         NSBundle *bundle = [NSBundle mainBundle];
-        NSString *plistPath = [bundle pathForResource:@"States" ofType:@"plist"];
-        NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
-        self.locationArray = array;
+        NSString *statePlistPath = [bundle pathForResource:@"States" ofType:@"plist"];
+        NSArray *stateArray = [[NSArray alloc] initWithContentsOfFile:statePlistPath];
+        self.locationArray = stateArray;
 
         // Initialize location to user defaults or first entry of state array if no default
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -33,6 +34,12 @@
         } else {
             [self updateLocation:[[self.locationArray objectAtIndex:0] objectForKey:@"Name"]];
         }
+        
+        // Load activity array
+        NSString *activityPlistPath = [bundle pathForResource:@"Activities" ofType:@"plist"];
+        NSArray *activityArray = [[NSArray alloc] initWithContentsOfFile:activityPlistPath];
+        self.activityArray = activityArray;
+        
         return self;
     } else {
         return nil;

@@ -14,10 +14,24 @@
 
 @synthesize window = _window;
 
+#pragma mark - My methods
+
+- (void)customizeAppearance
+{
+    // Create resizable images
+    UIImage *navBarImage = [[UIImage imageNamed:@"navBarBlueBackground"]
+                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+     
+    // Set the background image for *all* UINavigationBars
+    [[UINavigationBar appearance] setBackgroundImage:navBarImage
+                                       forBarMetrics:UIBarMetricsDefault];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     self.dataModel = [[WTDataModel alloc] init];
+    [self customizeAppearance];
     return YES;
 }
 							

@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) NSArray *locationArray;
 @property (strong, nonatomic) NSString *currentLocation;
+@property (strong, nonatomic) NSArray *activityArray;
 
 - (id)init;
 - (void)updateLocation:(NSString *)location;

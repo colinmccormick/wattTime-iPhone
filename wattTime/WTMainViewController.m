@@ -63,7 +63,6 @@
             [spinner stopAnimating];
         });
     });
-    //dispatch_release(fetch_queue);
 }
 
 // Extract correct data element from interval array for current time (varies by ISO/RTO)
@@ -91,13 +90,21 @@
     return [arrayOfIntervalData lastObject];
 }
 
+// Put points from interval data into strip chart property for display
 - (void)loadIntervalDataIntoChart:(NSArray *)arrayOfIntervalData {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSMutableArray *arrayOfPoints = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in arrayOfIntervalData) {
         NSDictionary *newDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[dictionary objectForKey:LOCAL_TIME_KEY], @"date", [dictionary objectForKey:PERCENT_GREEN_KEY], @"percent", nil];
-        [array addObject:newDictionary];
-    }
-    stripChart.chartPoints = array;
+        // Special case for California (don't display forecast)
+        NSNumber *forecastCode = [dictionary objectForKey:@"forecast_code"];
+        if (forecastCode != nil) {
+            if ([forecastCode intValue] == 1) {
+                break;
+            }
+        }
+        [arrayOfPoints addObject:newDictionary];
+    }    
+    stripChart.chartPoints = arrayOfPoints;
     [stripChart setNeedsDisplay];
 }
 

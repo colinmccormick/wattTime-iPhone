@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "WTAppDelegate.h"
 
-@interface WTLocationViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
-    __weak IBOutlet UIPickerView *pickerView;
-    __weak IBOutlet UILabel *locationLabel;
+@interface WTLocationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     __weak WTDataModel *dataModel;
+    __weak IBOutlet UITableView *stateTableView;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

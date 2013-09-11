@@ -12,24 +12,26 @@
 
 #pragma mark - My methods
 
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [dataModel.locationArray count];
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:row];
-    return [stateDictionary objectForKey:@"Name"];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stateCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"stateCell"];
+    }
+    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [stateDictionary objectForKey:@"ISO"];
+    cell.detailTextLabel.text = [stateDictionary objectForKey:@"Name"];
+    return cell;
 }
 
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:row];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:indexPath.row];
     NSString *stateName = [stateDictionary objectForKey:@"Name"];
     [dataModel updateLocation:stateName];
-    locationLabel.text = stateName;
 }
 
 #pragma mark - View lifecycle
@@ -37,32 +39,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Find pointer to the data model and update location label
+    // Find pointer to the data model
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
-    locationLabel.text = dataModel.currentLocation;
 }
 
 - (void)viewDidUnload
 {
-    pickerView = nil;
     [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
-    // Set initial selected row in picker wheel based on currentLocation
-    NSArray *nameArray = [dataModel.locationArray valueForKey:@"Name"];
-    NSInteger startRow = [nameArray indexOfObject:dataModel.currentLocation];
-    [pickerView selectRow:startRow inComponent:0 animated:NO];
+    [super viewWillAppear:animated];    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    // Set initial selected row in table view
+    NSArray *nameArray = [dataModel.locationArray valueForKey:@"Name"];
+    NSInteger startRow = [nameArray indexOfObject:dataModel.currentLocation];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:startRow inSection:0];
+    [stateTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -86,24 +85,6 @@
     } else {
         return YES;
     }
-}
-
-#pragma mark - Additional methods
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -9,8 +9,8 @@
 #import "WTAppDelegate.h"
 #import "WTStripChart.h"
 
-#define TIME_LABEL_STRING @"At %@ in"
-#define PERCENT_GREEN_LABEL_STRING @"the grid is %0.1f%% green."
+#define TIME_LABEL_STRING @"%@"
+#define PERCENT_GREEN_LABEL_STRING @"%0.1f%% green"
 
 @interface WTMainViewController : UIViewController {
 
@@ -31,4 +31,5 @@
 - (void)loadIntervalDataIntoChart:(NSArray *)arrayOfIntervalData;
 - (NSDictionary *)getCurrentIntervalData:(NSArray *)arrayOfIntervalData;
 - (IBAction)stripChartWasTapped:(id)sender;
+
 @end

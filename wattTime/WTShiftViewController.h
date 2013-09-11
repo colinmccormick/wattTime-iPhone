@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "WTMainViewController.h"
 
-@interface WTShiftViewController : UIViewController {
+#define LOCATION_LABEL_STRING @"You're in %@"
+
+@interface WTShiftViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     __weak WTDataModel *dataModel;
+    __weak IBOutlet UITableView *activityTableView;
+    __weak IBOutlet UILabel *locationLabel;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
