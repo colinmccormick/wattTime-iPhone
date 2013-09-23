@@ -53,10 +53,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    // Set initial selected row in table view
-    NSArray *nameArray = [dataModel.locationArray valueForKey:@"Name"];
-    NSInteger startRow = [nameArray indexOfObject:dataModel.currentLocation];
-    [locationPicker selectedRowInComponent:startRow];
+    // Set initial selected row in table view - need to implement this
 }
 
 - (void)viewWillDisappear:(BOOL)animated
