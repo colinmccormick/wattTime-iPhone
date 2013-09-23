@@ -1,6 +1,6 @@
 //
 //  WTAppDelegate.h
-//  wattTime v0.3
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 7/2/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
@@ -15,6 +15,5 @@
 @property (strong, nonatomic) WTDataModel *dataModel;
 
 - (NSURL *)applicationDocumentsDirectory;
-- (void)customizeAppearance;
 
 @end

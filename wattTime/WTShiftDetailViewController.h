@@ -1,25 +1,24 @@
 //
 //  WTShiftDetailViewController.h
-//  wattTime
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 9/11/13.
-//  Copyright (c) 2013 Novodox. All rights reserved.
+//  Copyright (c) 2013 wattTime. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-#define ACTIVITY_STRING @"The best time to %@ is:"
-#define CO2_SAVINGS_STRING @"Starting then will save %0.1f pounds of CO2!"
+#import "WTShiftViewController.h"
+#import "WTShiftTimeSetViewController.h"
 
 @interface WTShiftDetailViewController : UIViewController {
+    __weak WTDataModel *dataModel;
     __weak IBOutlet UILabel *activityLabel;
-    __weak IBOutlet UILabel *timeLabel;
-    __weak IBOutlet UILabel *savingsLabel;
+    __weak IBOutlet UILabel *durationLabel;
+    __weak IBOutlet UIButton *startTimeButton;
+    __weak IBOutlet UIButton *stopTimeButton;
+    __weak IBOutlet UIImageView *activityImage;
 }
 
-@property NSDictionary *activity;
-
-- (NSDate *)calculateBestTime;
-- (NSNumber *)calculateCarbonSavings:(NSDate *)forStartTime;
+- (IBAction)backButtonWasTapped:(id)sender;
 
 @end

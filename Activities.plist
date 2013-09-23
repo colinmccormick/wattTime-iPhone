@@ -5,50 +5,42 @@
 	<dict>
 		<key>Name</key>
 		<string>chargeEV</string>
-		<key>MyDescription</key>
-		<string>Charging my EV</string>
-		<key>YourDescription</key>
-		<string>charge your EV</string>
+		<key>Description</key>
+		<string>EV charging</string>
 		<key>Length</key>
 		<real>8</real>
-		<key>Power</key>
-		<real>5000</real>
+        <key>Image</key>
+        <string>WTEVButton.png</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>washDryClothes</string>
-		<key>MyDescription</key>
-		<string>Washing/drying my clothes</string>
-		<key>YourDescription</key>
-		<string>wash/dry your clothes</string>
+		<string>doLaundry</string>
+		<key>Description</key>
+		<string>Laundry</string>
 		<key>Length</key>
-		<real>2</real>
-		<key>Power</key>
-		<real>4000</real>
+		<integer>2</integer>
+        <key>Image</key>
+        <string>WTLaundryButton.png</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>washDishes</string>
-		<key>MyDescription</key>
-		<string>Washing my dishes</string>
-		<key>YourDescription</key>
-		<string>wash your dishes</string>
+		<string>doDishes</string>
+		<key>Description</key>
+		<string>Dishes</string>
 		<key>Length</key>
 		<real>1</real>
-		<key>Power</key>
-		<real>500</real>
+        <key>Image</key>
+        <string>WTDishesButton.png</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>chargePhone</string>
-		<key>MyDescription</key>
-		<string>Charging my phone</string>
-		<key>YourDescription</key>
-		<string>charge your phone</string>
+		<string>custom</string>
+		<key>Description</key>
+		<string>Custom</string>
 		<key>Length</key>
-		<real>1.5</real>
-		<key>Power</key>
-		<real>25</real>
+		<real>1</real>
+        <key>Image</key>
+        <string>WTCustomButton.png</string>
 	</dict>
 </array>
 </plist>

@@ -1,55 +1,59 @@
 //
 //  WTShiftDetailViewController.m
-//  wattTime
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 9/11/13.
-//  Copyright (c) 2013 Novodox. All rights reserved.
+//  Copyright (c) 2013 wattTime. All rights reserved.
 //
 
 #import "WTShiftDetailViewController.h"
 
 @implementation WTShiftDetailViewController
 
-@synthesize activity = _activity;
-
 #pragma mark - My methods
 
-// Calculate best time to do activity
-- (NSDate *)calculateBestTime {
-    return [NSDate date];
+- (IBAction)backButtonWasTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-// Calculate carbon saved (projected) for starting activity at startTime
-- (NSNumber *)calculateCarbonSavings:(NSDate *)forStartTime {
-    return [NSNumber numberWithDouble:5.0];
+// Set delegate and instruction string for time-setting view
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:START_TIME_SEGUE_NAME]) {
+        WTShiftTimeSetViewController *view = [segue destinationViewController];
+        view.instructionLabelString = START_TIME_STRING;
+    } else if ([[segue identifier] isEqualToString:END_TIME_SEGUE_NAME]) {
+        WTShiftTimeSetViewController *view = [segue destinationViewController];
+        view.instructionLabelString = END_TIME_STRING;
+    }
+    // Other segue is @"showShiftResultView" but don't need to set anything
 }
 
 #pragma mark - Original methods
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Update label showing activity
-    activityLabel.numberOfLines = 0;
-    activityLabel.text = [NSString stringWithFormat:ACTIVITY_STRING, [self.activity objectForKey:@"YourDescription"]];
-    // Update label showing best time
-    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
-    NSDate *bestTime = [self calculateBestTime];
-    timeLabel.text = [timeFormatter stringFromDate:bestTime];
-    // Update label showing carbon savings
-    NSNumber *poundsOfCO2Saved = [self calculateCarbonSavings:bestTime];
-    savingsLabel.numberOfLines = 0;
-    savingsLabel.text = [NSString stringWithFormat:CO2_SAVINGS_STRING, [poundsOfCO2Saved doubleValue]];
+
+    // Find pointer to dataModel
+    WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
+    dataModel = appDelegate.dataModel;
+    
+    // Update image
+    NSString *imageName = [dataModel.currentActivity objectForKey:@"Image"];
+    UIImage *image = [UIImage imageNamed:imageName];
+    [activityImage setImage:image];
+    
+    // Update labels showing activity description and time
+    activityLabel.text = [NSString stringWithFormat:ACTIVITY_STRING, [dataModel.currentActivity objectForKey:@"Description"]];
+    durationLabel.text = [NSString stringWithFormat:DURATION_STRING, [dataModel.currentActivity objectForKey:@"Length"]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // Update startTime, stopTime and respective labels
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:DATE_FORMAT_STRING];
+    [startTimeButton setTitle:[formatter stringFromDate:dataModel.startTime] forState:UIControlStateNormal];
+    [stopTimeButton setTitle:[formatter stringFromDate:dataModel.endTime] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,8 +63,7 @@
 }
 
 - (void)viewDidUnload {
-    timeLabel = nil;
-    savingsLabel = nil;
+    durationLabel = nil;
     [super viewDidUnload];
 }
 @end

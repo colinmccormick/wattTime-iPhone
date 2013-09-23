@@ -1,6 +1,6 @@
 //
 //  WTStripChart.h
-//  wattTime v0.3
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 8/20/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSArray *chartPoints;
 
 - (NSArray *)makeYTickLabelArray;
+- (void)displayLine:(NSArray *)points withColor:(CGColorRef *)color eraseOldLines:(BOOL)erase;
 
 @end

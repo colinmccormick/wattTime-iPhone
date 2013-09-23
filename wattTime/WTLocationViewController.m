@@ -1,6 +1,6 @@
 //
 //  WTLocationViewController.m
-//  wattTime v0.3
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 9/7/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
@@ -12,24 +12,20 @@
 
 #pragma mark - My methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return [dataModel.locationArray count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stateCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"stateCell"];
-    }
-    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [stateDictionary objectForKey:@"ISO"];
-    cell.detailTextLabel.text = [stateDictionary objectForKey:@"Name"];
-    return cell;
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[dataModel.locationArray objectAtIndex:row] objectForKey:@"Name"];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:indexPath.row];
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSDictionary *stateDictionary = [dataModel.locationArray objectAtIndex:row];
     NSString *stateName = [stateDictionary objectForKey:@"Name"];
     [dataModel updateLocation:stateName];
 }
@@ -60,8 +56,7 @@
     // Set initial selected row in table view
     NSArray *nameArray = [dataModel.locationArray valueForKey:@"Name"];
     NSInteger startRow = [nameArray indexOfObject:dataModel.currentLocation];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:startRow inSection:0];
-    [stateTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    [locationPicker selectedRowInComponent:startRow];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2DFD4369-C6A4-41D4-A1B7-EA6A4E9E5A77</string>
+	<key>IDESourceControlProjectName</key>
+	<string>wattTime</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>21868BBA-D869-4ED8-A882-212D493CEE07</key>
+		<string>https://github.com/colinmccormick/wattTime-iPhone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>wattTime.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>21868BBA-D869-4ED8-A882-212D493CEE07</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/colinmccormick/wattTime-iPhone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>21868BBA-D869-4ED8-A882-212D493CEE07</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>21868BBA-D869-4ED8-A882-212D493CEE07</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wattTime-iPhone</string>
+		</dict>
+	</array>
+</dict>
+</plist>

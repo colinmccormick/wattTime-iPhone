@@ -1,6 +1,6 @@
 //
 //  WTLocationViewController.h
-//  wattTime v0.3
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 9/7/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
@@ -9,13 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WTAppDelegate.h"
 
-@interface WTLocationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface WTLocationViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     __weak WTDataModel *dataModel;
-    __weak IBOutlet UITableView *stateTableView;
+    __weak IBOutlet UIPickerView *locationPicker;
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

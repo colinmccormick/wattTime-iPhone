@@ -1,6 +1,6 @@
 //
 //  WTShiftViewController.m
-//  wattTime v0.3
+//  wattTime v0.4
 //
 //  Created by Colin McCormick on 8/26/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
@@ -14,28 +14,13 @@
 
 #pragma mark - My methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [dataModel.activityArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"activityCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"activityCell"];
-    }
-    NSDictionary *activityDictionary = [dataModel.activityArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [activityDictionary objectForKey:@"MyDescription"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ hours", [activityDictionary objectForKey:@"Length"]];
-    return cell;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showActivityDetail"]) {
-        NSIndexPath *indexPath = [activityTableView indexPathForSelectedRow];
-        NSDictionary *activityDictionary = [dataModel.activityArray objectAtIndex:indexPath.row];
-        WTShiftDetailViewController *destinationVC = [segue destinationViewController];
-        destinationVC.activity = activityDictionary;
-    }
+// Figure out which button was tapped, set dataModel.currentActivity, and call segue
+- (IBAction)activityButtonWasTapped:(id)sender {
+    NSString *activityName = [sender currentTitle];
+    NSArray *activityNameList = [dataModel.activityArray valueForKey:@"Name"];
+    NSDictionary *activityDictionary = [dataModel.activityArray objectAtIndex:[activityNameList indexOfObject:activityName]];
+    dataModel.currentActivity = activityDictionary;
+    [self performSegueWithIdentifier:@"showShiftDetailView" sender:self];
 }
 
 #pragma mark - Original methods
@@ -52,12 +37,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Find pointer to dataModel
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // Don't display navigation bar
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    // Display the current location
     locationLabel.text = [NSString stringWithFormat:LOCATION_LABEL_STRING, dataModel.currentLocation];
-    
-    // Round corners on table view
-    activityTableView.layer.cornerRadius = 5;
 }
 
 - (void)didReceiveMemoryWarning
