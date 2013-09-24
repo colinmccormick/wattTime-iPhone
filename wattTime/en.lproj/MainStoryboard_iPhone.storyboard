@@ -400,7 +400,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="O7U-fg-I0r" kind="push" identifier="showShiftResultView" id="5wd-T9-z7X"/>
+                                    <action selector="tellMeButtonWasTapped:" destination="ZSq-S7-i1K" eventType="touchUpInside" id="5RB-uw-cCM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sON-jL-jcn">
@@ -471,6 +471,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="durationLabel" destination="qLG-x4-ebM" id="oCu-He-P5a"/>
                         <outlet property="startTimeButton" destination="6ft-UC-axf" id="5TV-Dv-pnk"/>
                         <outlet property="stopTimeButton" destination="xZH-Pc-EhU" id="F4g-kW-fwF"/>
+                        <segue destination="O7U-fg-I0r" kind="push" identifier="showShiftResultView" id="BmF-7F-jPj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXW-Re-43X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -527,6 +528,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="WTLocationTitle.png" width="300" height="40"/>
         <image name="WTShiftTabBarIcon.png" width="30" height="30"/>
         <image name="WTShiftTitle.png" width="300" height="40"/>
+        <image name="WTShiftTitle.png" width="300" height="40"/>
+        <image name="WTShiftTitle.png" width="300" height="40"/>
+        <image name="WTShiftTitle.png" width="300" height="40"/>
+        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
+        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
+        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
+        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
+        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
         <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
         <image name="tabBarMainIcon.png" width="30" height="30"/>
     </resources>

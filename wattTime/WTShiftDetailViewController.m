@@ -16,6 +16,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)tellMeButtonWasTapped:(id)sender {
+    // Check that end time is after start time
+    // Should be protected by WTShiftTimeSetViewController, but may not be
+    if ([dataModel.startTime earlierDate:dataModel.endTime] == dataModel.endTime) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"The end time must be later than the start time." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alert show];
+    } else {
+        [self performSegueWithIdentifier:@"showShiftResultView" sender:self];
+    }
+}
+
 // Set delegate and instruction string for time-setting view
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:START_TIME_SEGUE_NAME]) {
