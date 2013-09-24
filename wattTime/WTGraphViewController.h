@@ -1,22 +1,20 @@
 //
-//  WTMainViewController.h
-//  wattTime v0.4
+//  WTGraphViewController.h
+//  wattTime 0.4
 //
-//  Created by Colin McCormick on 7/2/13.
+//  Created by Colin McCormick on 9/24/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "WTAppDelegate.h"
 #import "WTStripChart.h"
 
-#define TIME_LABEL_STRING @"%@"
-#define PERCENT_GREEN_LABEL_STRING @"%0.1f%% green"
-
-@interface WTMainViewController : UIViewController {
-
+@interface WTGraphViewController : UIViewController {
+    
     __weak IBOutlet UILabel *timeLabel;
     __weak IBOutlet UILabel *locationLabel;
-    __weak IBOutlet UILabel *percentGreenLabel; 
+    __weak IBOutlet UILabel *percentGreenLabel;
     __weak IBOutlet WTStripChart *stripChart;
     __weak WTDataModel *dataModel;
     

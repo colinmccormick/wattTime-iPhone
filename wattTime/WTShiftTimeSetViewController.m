@@ -51,6 +51,16 @@
     dataModel = appDelegate.dataModel;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    if ([self.instructionLabelString isEqualToString:START_TIME_STRING]) {
+        [datePicker setDate:dataModel.startTime];
+    } else {
+        [datePicker setDate:dataModel.endTime];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller - Green grid amount-->
+        <!--Graph View Controller - Green grid amount-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="WTMainViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="WTGraphViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -527,14 +527,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="WTLocationTitle.png" width="300" height="40"/>
         <image name="WTShiftTabBarIcon.png" width="30" height="30"/>
         <image name="WTShiftTitle.png" width="300" height="40"/>
-        <image name="WTShiftTitle.png" width="300" height="40"/>
-        <image name="WTShiftTitle.png" width="300" height="40"/>
-        <image name="WTShiftTitle.png" width="300" height="40"/>
-        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
-        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
-        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
-        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
-        <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
         <image name="WattTimeShiftDetailButton.png" width="260" height="40"/>
         <image name="tabBarMainIcon.png" width="30" height="30"/>
     </resources>

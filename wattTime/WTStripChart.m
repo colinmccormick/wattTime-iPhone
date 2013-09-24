@@ -97,7 +97,7 @@
     
     // Draw chart points
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:DATE_FORMAT];
+    [dateFormatter setDateFormat:STRIP_CHART_DATE_FORMAT];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     CGFloat radius = 5.0;

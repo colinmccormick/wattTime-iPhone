@@ -18,6 +18,17 @@
 #define USAGE_HOURS @"usage_hours="
 #define RECOMMENDED_START @"recommended_start"
 
+#define PERCENT_GREEN_LABEL_STRING @"%0.1f%% green"
+#define LOCATION_LABEL_STRING @"You're in %@"
+#define ACTIVITY_STRING @"%@"
+#define DURATION_STRING @"%@ hours"
+#define DATE_FORMAT_STRING @"MMM dd hh:mm a"
+#define JSON_DATE_FORMAT_STRING @"YYYY-MM-DD HH:mm"
+#define START_TIME_SEGUE_NAME @"showShiftStartTimeSetView"
+#define END_TIME_SEGUE_NAME @"showShiftEndTimeSetView"
+#define START_TIME_STRING @"START TIME:"
+#define END_TIME_STRING @"END TIME:"
+
 @interface WTDataModel : NSObject
 
 @property (strong, nonatomic) NSArray *locationArray;

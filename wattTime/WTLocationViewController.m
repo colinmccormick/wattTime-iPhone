@@ -53,7 +53,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    // Set initial selected row in table view - need to implement this
+    // Set initial selected row in table view
+    NSArray *locationNames = [dataModel.locationArray valueForKey:@"Name"];
+    NSString *currentLocation = dataModel.currentLocation;
+    NSInteger index = [locationNames indexOfObject:currentLocation];
+    [locationPicker selectRow:index inComponent:0 animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

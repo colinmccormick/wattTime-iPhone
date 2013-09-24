@@ -1,14 +1,14 @@
 //
-//  WTMainViewController.m
-//  wattTime v0.4
+//  WTGraphViewController.m
+//  wattTime 0.4
 //
-//  Created by Colin McCormick on 7/2/13.
+//  Created by Colin McCormick on 9/24/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
 //
 
-#import "WTMainViewController.h"
+#import "WTGraphViewController.h"
 
-@implementation WTMainViewController
+@implementation WTGraphViewController
 
 #pragma mark - My methods
 
@@ -25,7 +25,7 @@
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *theCurrentHour = [timeFormatter stringFromDate:currentDate];
-    timeLabel.text = [NSString stringWithFormat:TIME_LABEL_STRING, theCurrentHour];
+    timeLabel.text = theCurrentHour;
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
 }
 
@@ -39,7 +39,7 @@
     [self.view addSubview:spinner];
     [spinner startAnimating];
     
-    // Send download request (use second thread to avoid blocking main thread) 
+    // Send download request (use second thread to avoid blocking main thread)
     dispatch_queue_t fetch_queue = dispatch_queue_create("JSON Fetch", NULL);
     dispatch_async(fetch_queue, ^{
         
@@ -47,12 +47,12 @@
         
         // Put back on the main thread to use UIKit
         dispatch_async(dispatch_get_main_queue(), ^{
-
-            if (arrayOfIntervalData) {
             
+            if (arrayOfIntervalData) {
+                
                 // Display interval data on strip chart
                 [self loadIntervalDataIntoChart:arrayOfIntervalData];
-
+                
                 // Extract element of interval array corresponding to the current time (in the app time zone)
                 NSDictionary *currentInterval = [self getCurrentIntervalData:arrayOfIntervalData];
                 NSNumber *percentGreen = [currentInterval valueForKey:PERCENT_GREEN_KEY];
@@ -67,12 +67,12 @@
 
 // Extract correct data element from interval array for current time (varies by ISO/RTO)
 - (NSDictionary *)getCurrentIntervalData:(NSArray *)arrayOfIntervalData {
-
+    
     // Set up date formatter to match JSON date strings
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:JSON_DATE_FORMAT];
     [formatter setTimeZone:[NSTimeZone localTimeZone]];
-
+    
     // Search entries of interval array
     NSDate *currentTime = [NSDate date];
     NSArray *arrayOfLocalTimes = [arrayOfIntervalData valueForKey:LOCAL_TIME_KEY];
@@ -103,7 +103,7 @@
             }
         }
         [arrayOfPoints addObject:newDictionary];
-    }    
+    }
     stripChart.chartPoints = arrayOfPoints;
     [stripChart setNeedsDisplay];
 }
@@ -135,7 +135,7 @@
     [super viewWillAppear:animated];
     
     // Start timer, update display, update location
-    [self updateTimer]; 
+    [self updateTimer];
     [self updateDisplay];
     locationLabel.text = dataModel.currentLocation;
 }

@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTMainViewController.h"
-
-#define LOCATION_LABEL_STRING @"You're in %@"
-#define ACTIVITY_STRING @"%@"
-#define DURATION_STRING @"%@ hours"
-#define DATE_FORMAT_STRING @"MMM dd hh:mm a"
-#define JSON_DATE_FORMAT_STRING @"YYYY-MM-DD HH:mm"
-#define START_TIME_SEGUE_NAME @"showShiftStartTimeSetView"
-#define END_TIME_SEGUE_NAME @"showShiftEndTimeSetView"
-#define START_TIME_STRING @"START TIME:"
-#define END_TIME_STRING @"END TIME:"
+#import "WTDataModel.h"
+#import "WTGraphViewController.h"
+#import "WTShiftDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface WTShiftViewController : UIViewController {
     __weak WTDataModel *dataModel;

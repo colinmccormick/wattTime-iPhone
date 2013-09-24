@@ -25,7 +25,6 @@
         WTShiftTimeSetViewController *view = [segue destinationViewController];
         view.instructionLabelString = END_TIME_STRING;
     }
-    // Other segue is @"showShiftResultView" but don't need to set anything
 }
 
 #pragma mark - Original methods

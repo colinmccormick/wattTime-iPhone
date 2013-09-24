@@ -7,8 +7,6 @@
 //
 
 #import "WTShiftViewController.h"
-#import "WTShiftDetailViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation WTShiftViewController
 
@@ -16,6 +14,14 @@
 
 // Figure out which button was tapped, set dataModel.currentActivity, and call segue
 - (IBAction)activityButtonWasTapped:(id)sender {
+    
+    // Shift only works in CA, so check we're there
+    if (![dataModel.currentLocation isEqualToString:@"California"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Shift only works in California.  Change your location to use it." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     NSString *activityName = [sender currentTitle];
     NSArray *activityNameList = [dataModel.activityArray valueForKey:@"Name"];
     NSDictionary *activityDictionary = [dataModel.activityArray objectAtIndex:[activityNameList indexOfObject:activityName]];

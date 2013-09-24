@@ -8,8 +8,6 @@
 
 #import "WTAppDelegate.h"
 
-#import "WTMainViewController.h"
-
 @implementation WTAppDelegate
 
 @synthesize window = _window;

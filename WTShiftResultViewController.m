@@ -8,10 +8,6 @@
 
 #import "WTShiftResultViewController.h"
 
-@interface WTShiftResultViewController ()
-
-@end
-
 @implementation WTShiftResultViewController
 
 - (IBAction)backButtonWasTapped:(id)sender {
