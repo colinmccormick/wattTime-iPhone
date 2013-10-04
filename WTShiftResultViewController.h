@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIClock.h"
 #import "WTShiftDetailViewController.h"
 
 @interface WTShiftResultViewController : UIViewController {
     __weak WTDataModel *dataModel;
     __weak IBOutlet UILabel *shiftResultLabel;
+    __weak IBOutlet UIClock *shiftResultClock;
 }
 
 - (IBAction)backButtonWasTapped:(id)sender;

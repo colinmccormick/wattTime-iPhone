@@ -335,15 +335,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="10" y="40" width="300" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watt Time?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i91-BE-Jm7">
-                                <rect key="frame" x="10" y="110" width="300" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 31, 11:59 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hwo-BO-RTa">
-                                <rect key="frame" x="40" y="180" width="240" height="80"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hwo-BO-RTa">
+                                <rect key="frame" x="40" y="280" width="240" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.71372549019607845" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -351,23 +344,29 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will be the greenest." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6q6-XM-8AJ">
-                                <rect key="frame" x="10" y="300" width="300" height="30"/>
+                                <rect key="frame" x="10" y="330" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="2fk-1s-gMk" customClass="UIClock">
+                                <rect key="frame" x="70" y="80" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94534432889999997" green="0.92243987319999998" blue="0.87823510169999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.93725490199999995" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ewk-w8-Wz3"/>
                     <connections>
+                        <outlet property="shiftResultClock" destination="2fk-1s-gMk" id="hgo-GL-MG3"/>
                         <outlet property="shiftResultLabel" destination="Hwo-BO-RTa" id="jcl-gm-530"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEn-5W-clq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="1685"/>
+            <point key="canvasLocation" x="1868" y="526"/>
         </scene>
         <!--Shift Detail View Controller-->
         <scene sceneID="kQP-cV-lXw">
@@ -468,9 +467,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="activityImage" destination="9sN-KR-oI5" id="cwN-7S-PCk"/>
                         <outlet property="activityLabel" destination="s3m-Zu-rdS" id="jzC-bU-29u"/>
+                        <outlet property="backButton" destination="sON-jL-jcn" id="3Na-z9-kaU"/>
                         <outlet property="durationLabel" destination="qLG-x4-ebM" id="oCu-He-P5a"/>
                         <outlet property="startTimeButton" destination="6ft-UC-axf" id="5TV-Dv-pnk"/>
                         <outlet property="stopTimeButton" destination="xZH-Pc-EhU" id="F4g-kW-fwF"/>
+                        <outlet property="tellMeButton" destination="qoP-k8-192" id="UXC-Je-Qeq"/>
                         <segue destination="O7U-fg-I0r" kind="push" identifier="showShiftResultView" id="BmF-7F-jPj"/>
                     </connections>
                 </viewController>

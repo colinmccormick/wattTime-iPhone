@@ -21,6 +21,7 @@
 		3B8E4CE117F0E990000B7337 /* WTLocationTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B8E4CE017F0E990000B7337 /* WTLocationTitle.png */; };
 		3B8E4CE317F0EEE7000B7337 /* WTLocationMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B8E4CE217F0EEE7000B7337 /* WTLocationMap.png */; };
 		3B8E4CE517F0F1AF000B7337 /* WTLocationTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B8E4CE417F0F1AF000B7337 /* WTLocationTabBarIcon.png */; };
+		3B8FE88F17FE26FC00F178BC /* UIClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FE88E17FE26FC00F178BC /* UIClock.m */; };
 		3B97A05C17DCE80100CC4FEA /* tabBarMainIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */; };
 		3BB4C82117E9041F002B039F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4C82017E9041F002B039F /* Default@2x.png */; };
 		3BB4C82917E937D9002B039F /* WTCustomButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4C82517E937D8002B039F /* WTCustomButton.png */; };
@@ -66,6 +67,8 @@
 		3B8E4CE017F0E990000B7337 /* WTLocationTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTLocationTitle.png; sourceTree = "<group>"; };
 		3B8E4CE217F0EEE7000B7337 /* WTLocationMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTLocationMap.png; sourceTree = "<group>"; };
 		3B8E4CE417F0F1AF000B7337 /* WTLocationTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTLocationTabBarIcon.png; sourceTree = "<group>"; };
+		3B8FE88D17FE26FC00F178BC /* UIClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIClock.h; sourceTree = "<group>"; };
+		3B8FE88E17FE26FC00F178BC /* UIClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIClock.m; sourceTree = "<group>"; };
 		3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarMainIcon.png; sourceTree = "<group>"; };
 		3BB4C82017E9041F002B039F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3BB4C82517E937D8002B039F /* WTCustomButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTCustomButton.png; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				3BEE63461783A99300136BB7 /* Supporting Files */,
 				3BC255FB17936A79008D2ABE /* States.plist */,
 				3B8E0EB517DFB5D600F17421 /* Activities.plist */,
+				3B8FE88D17FE26FC00F178BC /* UIClock.h */,
+				3B8FE88E17FE26FC00F178BC /* UIClock.m */,
 			);
 			path = wattTime;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			files = (
 				3BEFA18317EF8BD800B9C5DD /* WTShiftTimeSetViewController.m in Sources */,
 				3B8E4CDF17F0BD67000B7337 /* WTShiftResultViewController.m in Sources */,
+				3B8FE88F17FE26FC00F178BC /* UIClock.m in Sources */,
 				3BEE634C1783A99300136BB7 /* main.m in Sources */,
 				3BEE63501783A99300136BB7 /* WTAppDelegate.m in Sources */,
 				3BEE63591783A99300136BB7 /* wattTime.xcdatamodeld in Sources */,

@@ -100,7 +100,7 @@
     [dateFormatter setDateFormat:STRIP_CHART_DATE_FORMAT];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    CGFloat radius = 5.0;
+    CGFloat diameter = 5.0;
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterPercentStyle];
     NSNumber *maxYValueNumber = [numberFormatter numberFromString:[yTickLabels lastObject]];
@@ -114,8 +114,8 @@
         CGFloat xPosition = xLeftEdge + xAxisLength * (([hour doubleValue] / 24) + ([minute doubleValue] / (60 * 24)));
         NSNumber *percent = [point objectForKey:@"percent"];
         CGFloat yPostion = yBottomEdge + yAxisLength * ([percent doubleValue] / maxYValue);
-        CGRect rect = CGRectMake(xPosition, yPostion, radius, radius);
-        CGContextAddEllipseInRect(context, rect);
+        CGRect myRect = CGRectMake(xPosition, yPostion, diameter, diameter);
+        CGContextAddEllipseInRect(context, myRect);
     }
     
     CGContextSetLineWidth(context, 1);

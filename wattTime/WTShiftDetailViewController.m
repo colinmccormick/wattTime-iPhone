@@ -64,6 +64,28 @@
     [formatter setDateFormat:DATE_FORMAT_STRING];
     [startTimeButton setTitle:[formatter stringFromDate:dataModel.startTime] forState:UIControlStateNormal];
     [stopTimeButton setTitle:[formatter stringFromDate:dataModel.endTime] forState:UIControlStateNormal];
+    
+    // Round the buttons
+    [startTimeButton.layer setCornerRadius:10.0];
+    [startTimeButton.layer setMasksToBounds:YES];
+    [startTimeButton.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [startTimeButton.layer setBorderWidth:1.0];
+
+    [stopTimeButton.layer setCornerRadius:10.0];
+    [stopTimeButton.layer setMasksToBounds:YES];
+    [stopTimeButton.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [stopTimeButton.layer setBorderWidth:1.0];
+
+    [backButton.layer setCornerRadius:10.0];
+    [backButton.layer setMasksToBounds:YES];
+    [backButton.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [backButton.layer setBorderWidth:1.0];
+    
+    [tellMeButton.layer setCornerRadius:10.0];
+    [tellMeButton.layer setMasksToBounds:YES];
+    [tellMeButton.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [tellMeButton.layer setBorderWidth:1.0];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -16,6 +16,8 @@
     __weak IBOutlet UILabel *durationLabel;
     __weak IBOutlet UIButton *startTimeButton;
     __weak IBOutlet UIButton *stopTimeButton;
+    __weak IBOutlet UIButton *backButton;
+    __weak IBOutlet UIButton *tellMeButton;
     __weak IBOutlet UIImageView *activityImage;
 }
 

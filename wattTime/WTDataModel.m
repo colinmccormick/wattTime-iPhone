@@ -46,23 +46,14 @@
         // Initialize currentActivity to first entry of activity array
         self.currentActivity = [self.activityArray objectAtIndex:0];
         
-        // Initialize startTime (now) and endTime (end of today)
-        NSDate *now = [NSDate date];
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents *components = [calendar components: NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:now];
-        [components setHour:23];
-        [components setMinute:59];
-        NSDate *endOfToday = [calendar dateFromComponents:components];
-        [self setStartTime:now];
-        [self setEndTime:endOfToday];
-        
         return self;
     } else {
         return nil;
     }
 }
 
-// Update current location and the default time zone
+// Update current location , default time zone
+// Also update startTime (now) and endTime (end of today)
 - (void)updateLocation:(NSString *)location {
     self.currentLocation = location;
     NSArray *locationNames = [self.locationArray valueForKey:@"Name"];
@@ -70,6 +61,15 @@
     NSString *timeZoneName = [locationTimeZones objectAtIndex:[locationNames indexOfObject:location]];
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:timeZoneName];
     [NSTimeZone setDefaultTimeZone:timeZone];
+
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components: NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:now];
+    [components setHour:23];
+    [components setMinute:59];
+    NSDate *endOfToday = [calendar dateFromComponents:components];
+    [self setStartTime:now];
+    [self setEndTime:endOfToday];
 }
 
 // Fetch today's green percent data for current location

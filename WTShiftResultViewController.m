@@ -36,7 +36,7 @@
     
             if (dictionaryOfRecommendedTime) {
     
-                // Update best time label
+                // Update best time label and clock
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateFormat:JSON_DATE_FORMAT];
                 NSString *bestTimeStringJSON = [dictionaryOfRecommendedTime objectForKey:RECOMMENDED_START];
@@ -45,6 +45,7 @@
                     [formatter setDateFormat:DATE_FORMAT_STRING];
                     NSString *bestTimeStringLabel = [formatter stringFromDate:bestTime];
                     shiftResultLabel.text = bestTimeStringLabel;
+                    [shiftResultClock setClockTime:bestTime];
                 } else {
                     shiftResultLabel.text = @"N/A";
                 }
