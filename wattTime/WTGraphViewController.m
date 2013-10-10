@@ -108,61 +108,21 @@
     [stripChart setNeedsDisplay];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Find pointer to the data model
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
 }
 
-- (void)viewDidUnload
-{
-    stripChart = nil;
-    [super viewDidUnload];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     // Start timer, update display, update location
     [self updateTimer];
     [self updateDisplay];
     locationLabel.text = dataModel.currentLocation;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
 }
 
 @end

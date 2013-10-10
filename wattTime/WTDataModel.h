@@ -28,12 +28,13 @@
 #define END_TIME_SEGUE_NAME @"showShiftEndTimeSetView"
 #define START_TIME_STRING @"START TIME:"
 #define END_TIME_STRING @"END TIME:"
+#define CA_WARNING_STRING @"Shift only works in California.  Change your location to use it."
 
 @interface WTDataModel : NSObject
 
 @property (strong, nonatomic) NSArray *locationArray;
 @property (strong, nonatomic) NSString *currentLocation;
-@property (strong, nonatomic) NSArray *activityArray;
+@property (strong, nonatomic) NSMutableArray *activityArray;
 @property (strong, nonatomic) NSDictionary *currentActivity;
 @property (strong, nonatomic) NSDate *startTime;
 @property (strong, nonatomic) NSDate *endTime;

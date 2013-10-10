@@ -17,6 +17,4 @@
 
 @property (weak, nonatomic) NSString *instructionLabelString;
 
-- (IBAction)backButtonWasTapped:(id)sender;
-
 @end

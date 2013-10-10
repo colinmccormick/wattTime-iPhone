@@ -19,7 +19,7 @@
 
 #pragma mark - My methods
 
-// Initialize the data model with locationArray, currentLocation, activityArray and currentActivity
+// Initialize the data model with locationArray, currentLocation, activityArray, and currentActivity
 - (id)init {
     
     if (self = [super init]) {
@@ -38,9 +38,15 @@
             [self updateLocation:[[self.locationArray objectAtIndex:0] objectForKey:@"Name"]];
         }
         
-        // Load activity array
+        // Load activity array.  Modify if custom activity is set.
         NSString *activityPlistPath = [bundle pathForResource:@"Activities" ofType:@"plist"];
-        NSArray *activityArray = [[NSArray alloc] initWithContentsOfFile:activityPlistPath];
+        NSMutableArray *activityArray = [NSMutableArray arrayWithContentsOfFile:activityPlistPath];
+        NSDictionary *customActivity = [defaults dictionaryForKey:@"customActivity"];
+        if (customActivity) {
+            NSArray *activityNames = [activityArray valueForKey:@"Name"];
+            NSUInteger customIndex = [activityNames indexOfObject:@"custom"];
+            [activityArray replaceObjectAtIndex:customIndex withObject:customActivity];
+        }
         self.activityArray = activityArray;
         
         // Initialize currentActivity to first entry of activity array
@@ -52,8 +58,7 @@
     }
 }
 
-// Update current location , default time zone
-// Also update startTime (now) and endTime (end of today)
+// Update current location , default time zone, startTime (now), endTime (end of today)
 - (void)updateLocation:(NSString *)location {
     self.currentLocation = location;
     NSArray *locationNames = [self.locationArray valueForKey:@"Name"];
@@ -61,7 +66,6 @@
     NSString *timeZoneName = [locationTimeZones objectAtIndex:[locationNames indexOfObject:location]];
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:timeZoneName];
     [NSTimeZone setDefaultTimeZone:timeZone];
-
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components: NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:now];
@@ -87,11 +91,9 @@
     // Parse JSON data
     NSError *error = nil;
     NSArray *arrayOfIntervalData = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
-
     if (error) {
         NSLog(@"JSON parse error %@", error);
     }
-    
     return arrayOfIntervalData;
 }
 
@@ -107,19 +109,17 @@
     double secondsInAnHour = 3600;
     NSInteger timeRangeHours = distanceBetweenDates / secondsInAnHour;
     NSInteger usageHours = [[self.currentActivity objectForKey:@"Length"] integerValue];
-    
     NSString *urlStart = [NSString stringWithFormat:@"%@%@%@", BASE_URL, GREENEST_SUBRANGE_REQUEST, stateAbbreviation];
     NSString *urlTimeRange = [NSString stringWithFormat:@"&%@%d", TIME_RANGE_HOURS, timeRangeHours];
     NSString *urlUsageHours = [NSString stringWithFormat:@"&%@%d", USAGE_HOURS, usageHours];
     NSString *url = [NSString stringWithFormat:@"%@%@%@", urlStart, urlTimeRange, urlUsageHours];
-        
+    
     // Download data using URL request
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     
     // Parse JSON data
     NSError *error = nil;
     NSDictionary *dictionaryOfShiftRecommendation = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
-    
     if (error) {
         NSLog(@"JSON parse error %@", error);
     }

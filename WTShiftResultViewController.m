@@ -10,32 +10,22 @@
 
 @implementation WTShiftResultViewController
 
-- (IBAction)backButtonWasTapped:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 // Display
 - (void)displayRecommendedStartTime {
-    
     // Set up spinner to display while waiting for download
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160,180);
     spinner.hidesWhenStopped = YES;
     [self.view addSubview:spinner];
     [spinner startAnimating];
-    
     // Send download request (use second thread to avoid blocking main thread)
     dispatch_queue_t fetch_queue = dispatch_queue_create("JSON Fetch", NULL);
     dispatch_async(fetch_queue, ^{
-    
         // Get recommended time
         NSDictionary *dictionaryOfRecommendedTime = [dataModel generateShiftRecommendation];
-        
         // Put back on the main thread to use UIKit
         dispatch_async(dispatch_get_main_queue(), ^{
-    
             if (dictionaryOfRecommendedTime) {
-    
                 // Update best time label and clock
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateFormat:JSON_DATE_FORMAT];
@@ -57,22 +47,13 @@
     });
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Find pointer to dataModel
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
-    
     // Display
     [self displayRecommendedStartTime];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

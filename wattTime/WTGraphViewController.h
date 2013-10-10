@@ -17,7 +17,6 @@
     __weak IBOutlet UILabel *percentGreenLabel;
     __weak IBOutlet WTStripChart *stripChart;
     __weak WTDataModel *dataModel;
-    
     NSDate *currentDate;
     NSTimer *updateTimer;
 }

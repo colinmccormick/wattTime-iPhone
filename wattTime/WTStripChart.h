@@ -15,6 +15,5 @@
 @property (strong, nonatomic) NSArray *chartPoints;
 
 - (NSArray *)makeYTickLabelArray;
-- (void)displayLine:(NSArray *)points withColor:(CGColorRef *)color eraseOldLines:(BOOL)erase;
 
 @end

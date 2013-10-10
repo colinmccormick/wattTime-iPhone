@@ -32,26 +32,14 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Find pointer to the data model
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // Set initial selected row in table view
     NSArray *locationNames = [dataModel.locationArray valueForKey:@"Name"];
@@ -60,27 +48,11 @@
     [locationPicker selectRow:index inComponent:0 animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:dataModel.currentLocation forKey:@"defaultLocation"];
     [defaults synchronize];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
 }
 
 @end

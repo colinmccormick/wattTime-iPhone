@@ -12,19 +12,6 @@
 
 @synthesize chartPoints = _chartPoints;
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // initialize
-    }
-    return self;
-}
-
-- (void)displayLine:(NSArray *)points withColor:(CGColorRef *)color eraseOldLines:(BOOL)erase {
-    // implement this later
-}
-
 // Implement drawing of view
 - (void)drawRect:(CGRect)rect
 {
@@ -113,8 +100,8 @@
         NSNumber *minute = [NSNumber numberWithInt:[components minute]];
         CGFloat xPosition = xLeftEdge + xAxisLength * (([hour doubleValue] / 24) + ([minute doubleValue] / (60 * 24)));
         NSNumber *percent = [point objectForKey:@"percent"];
-        CGFloat yPostion = yBottomEdge + yAxisLength * ([percent doubleValue] / maxYValue);
-        CGRect myRect = CGRectMake(xPosition, yPostion, diameter, diameter);
+        CGFloat yPosition = yBottomEdge + yAxisLength * ([percent doubleValue] / maxYValue);
+        CGRect myRect = CGRectMake(xPosition, yPosition, diameter, diameter);
         CGContextAddEllipseInRect(context, myRect);
     }
     

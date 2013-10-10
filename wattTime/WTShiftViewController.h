@@ -15,6 +15,10 @@
 @interface WTShiftViewController : UIViewController {
     __weak WTDataModel *dataModel;
     __weak IBOutlet UILabel *locationLabel;
+    __weak IBOutlet UILabel *activityOneLabel;
+    __weak IBOutlet UILabel *activityTwoLabel;
+    __weak IBOutlet UILabel *activityThreeLabel;
+    __weak IBOutlet UILabel *activityFourLabel;
 }
 
 @end

@@ -16,7 +16,6 @@
     __weak IBOutlet UIClock *shiftResultClock;
 }
 
-- (IBAction)backButtonWasTapped:(id)sender;
 - (void)displayRecommendedStartTime;
 
 @end

@@ -16,8 +16,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Create dataModel object
     self.dataModel = [[WTDataModel alloc] init];
+    // Set Navigation Bar appearance
+    UIColor *navBarColor = [UIColor colorWithRed:0.529 green:0.843 blue:0.976 alpha:1.0];
+    UIFont *navBarFont = [UIFont fontWithName:@"MarkerFelt-Thin" size:25];
+    UIColor *navBarTitleColor = [UIColor colorWithRed:0.380 green:0.667 blue:0.231 alpha:1.0];
+    NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
+    [titleBarAttributes setValue:navBarFont forKey:UITextAttributeFont];
+    [titleBarAttributes setValue:navBarTitleColor forKey:UITextAttributeTextColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+    [[UINavigationBar appearance] setBackgroundColor:navBarColor];
+    
+    UIColor *tabBarColor = [UIColor colorWithRed:0.529 green:0.843 blue:0.976 alpha:1.0];
+    [[UITabBar appearance] setBackgroundColor:tabBarColor];
     return YES;
 }
 							

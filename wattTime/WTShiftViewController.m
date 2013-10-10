@@ -14,14 +14,6 @@
 
 // Figure out which button was tapped, set dataModel.currentActivity, and call segue
 - (IBAction)activityButtonWasTapped:(id)sender {
-    
-    // Shift only works in CA, so check we're there
-    if (![dataModel.currentLocation isEqualToString:@"California"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Shift only works in California.  Change your location to use it." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
     NSString *activityName = [sender currentTitle];
     NSArray *activityNameList = [dataModel.activityArray valueForKey:@"Name"];
     NSDictionary *activityDictionary = [dataModel.activityArray objectAtIndex:[activityNameList indexOfObject:activityName]];
@@ -29,40 +21,25 @@
     [self performSegueWithIdentifier:@"showShiftDetailView" sender:self];
 }
 
-#pragma mark - Original methods
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Find pointer to dataModel
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
+    // Set activity labels from activity array
+    NSArray *activityNames = [dataModel.activityArray valueForKey:@"Description"];
+    [activityOneLabel setText:[activityNames objectAtIndex:0]];
+    [activityTwoLabel setText:[activityNames objectAtIndex:1]];
+    [activityThreeLabel setText:[activityNames objectAtIndex:2]];
+    [activityFourLabel setText:[activityNames objectAtIndex:3]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    // Don't display navigation bar
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
     // Display the current location
     locationLabel.text = [NSString stringWithFormat:LOCATION_LABEL_STRING, dataModel.currentLocation];
+    // Update custom button
+    NSArray *activityNames = [dataModel.activityArray valueForKey:@"Description"];
+    [activityFourLabel setText:[activityNames objectAtIndex:3]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload {
-    locationLabel = nil;
-    [super viewDidUnload];
-}
 @end
