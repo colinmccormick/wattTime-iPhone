@@ -27,7 +27,9 @@
     [titleBarAttributes setValue:navBarTitleColor forKey:UITextAttributeTextColor];
     [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
     [[UINavigationBar appearance] setBackgroundColor:navBarColor];
-    
+    UIBarMetrics navBarMetrics = UIBarMetricsDefault;
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:navBarMetrics];
+    // Set Tab Bar appearance
     UIColor *tabBarColor = [UIColor colorWithRed:0.529 green:0.843 blue:0.976 alpha:1.0];
     [[UITabBar appearance] setBackgroundColor:tabBarColor];
     return YES;

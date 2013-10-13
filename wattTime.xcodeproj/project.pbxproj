@@ -10,7 +10,6 @@
 		3B005AA117D9638900F541D5 /* WTDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B005AA017D9638900F541D5 /* WTDataModel.m */; };
 		3B13C35917E107760088FAAF /* WTShiftDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B13C35817E107760088FAAF /* WTShiftDetailViewController.m */; };
 		3B2F5C0B18033AE200849D01 /* WTSetCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F5C0A18033AE200849D01 /* WTSetCustomViewController.m */; };
-		3B2F5C0E1803516700849D01 /* WTCustomActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F5C0D1803516700849D01 /* WTCustomActivityViewController.m */; };
 		3B6607BC17C40C1F00BBD1C5 /* WTStripChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */; };
 		3B753BDD17B45C6C0011645C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B753BDC17B45C6C0011645C /* Default-568h@2x.png */; };
 		3B7D59F817A091B6001D3C3E /* WattTimeAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */; };
@@ -56,8 +55,6 @@
 		3B13C35817E107760088FAAF /* WTShiftDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTShiftDetailViewController.m; sourceTree = "<group>"; };
 		3B2F5C0918033AE200849D01 /* WTSetCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSetCustomViewController.h; sourceTree = "<group>"; };
 		3B2F5C0A18033AE200849D01 /* WTSetCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSetCustomViewController.m; sourceTree = "<group>"; };
-		3B2F5C0C1803516700849D01 /* WTCustomActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCustomActivityViewController.h; sourceTree = "<group>"; };
-		3B2F5C0D1803516700849D01 /* WTCustomActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCustomActivityViewController.m; sourceTree = "<group>"; };
 		3B6607BA17C40C1F00BBD1C5 /* WTStripChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTStripChart.h; sourceTree = "<group>"; };
 		3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTStripChart.m; sourceTree = "<group>"; };
 		3B753BDC17B45C6C0011645C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -159,8 +156,6 @@
 				3B005AA017D9638900F541D5 /* WTDataModel.m */,
 				3B8C474417DBE23C00453553 /* WTLocationViewController.h */,
 				3B8C474517DBE23C00453553 /* WTLocationViewController.m */,
-				3B2F5C0C1803516700849D01 /* WTCustomActivityViewController.h */,
-				3B2F5C0D1803516700849D01 /* WTCustomActivityViewController.m */,
 				3BB714A317F21D7A00A4B1C4 /* WTGraphViewController.h */,
 				3BB714A417F21D7A00A4B1C4 /* WTGraphViewController.m */,
 				3B7E685E17CBC06C002FCED7 /* WTShiftViewController.h */,
@@ -310,7 +305,6 @@
 				3B005AA117D9638900F541D5 /* WTDataModel.m in Sources */,
 				3B8C474617DBE23C00453553 /* WTLocationViewController.m in Sources */,
 				3B13C35917E107760088FAAF /* WTShiftDetailViewController.m in Sources */,
-				3B2F5C0E1803516700849D01 /* WTCustomActivityViewController.m in Sources */,
 				3B2F5C0B18033AE200849D01 /* WTSetCustomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

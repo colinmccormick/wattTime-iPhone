@@ -38,4 +38,12 @@
     descriptionTextField.text = [[dataModel.activityArray lastObject] valueForKey:@"Description"];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+    NSDictionary *customActivity = [dataModel.activityArray lastObject];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:customActivity forKey:@"customActivity"];
+    [defaults synchronize];
+}
+
 @end

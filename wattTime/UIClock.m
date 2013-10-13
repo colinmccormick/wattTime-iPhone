@@ -47,7 +47,7 @@
     }
     
     // Set scaling factors
-    CGFloat fillFactor = 0.9; // Fraction of frame filled by clock
+    CGFloat fillFactor = 0.95; // Fraction of frame filled by clock
     CGFloat clockRadius = 0.5 * clockSize * fillFactor; // Radius of clock
     CGFloat tickLength = 0.1 * clockRadius;  // Length of clock tick marks
     CGFloat hourHandLength = 0.5 * clockRadius;
@@ -79,7 +79,9 @@
     CGFloat innerRadius = outerRadius - tickLength;
     CGFloat numberRadius = innerRadius - 0.75 * numberFontSize;
     UIFont *numberFont = [UIFont fontWithName:@"Helvetica" size:numberFontSize];
-    NSDictionary *numberAttributes = [NSDictionary dictionaryWithObjectsAndKeys:numberFont, NSFontAttributeName, nil];
+    NSMutableParagraphStyle *numberParagraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [numberParagraphStyle setAlignment:NSTextAlignmentCenter];
+    NSDictionary *numberAttributes = [NSDictionary dictionaryWithObjectsAndKeys:numberFont, NSFontAttributeName, numberParagraphStyle, NSParagraphStyleAttributeName, nil];
     for (int count = 1; count <= 12; count++) {
         CGFloat angleInRadians = 0.1667 * M_PI * count;
         CGFloat sineTickAngle = sin(angleInRadians);
@@ -88,16 +90,16 @@
         CGFloat yInnerTick = yCenter - innerRadius * cosineTickAngle;
         CGFloat xOuterTick = xCenter + outerRadius * sineTickAngle;
         CGFloat yOuterTick = yCenter - outerRadius * cosineTickAngle;
-        CGFloat xNumberLocation = xCenter + numberRadius * sineTickAngle - 0.25 * numberFontSize;
-        CGFloat yNumberLocation = yCenter - numberRadius * cosineTickAngle - 0.5 * numberFontSize;
         CGContextMoveToPoint(context, xInnerTick, yInnerTick);
         CGContextAddLineToPoint(context, xOuterTick, yOuterTick);
+        CGContextSetLineWidth(context, tickWidth);
+        CGContextDrawPath(context, kCGPathStroke);
+        CGFloat xNumberLocation = xCenter + numberRadius * sineTickAngle - numberFontSize;
+        CGFloat yNumberLocation = yCenter - numberRadius * cosineTickAngle - 0.5 * numberFontSize;
+        CGRect numberRect = CGRectMake(xNumberLocation, yNumberLocation, 2 * numberFontSize, numberFontSize);
         NSString *numberString = [[NSNumber numberWithInt:count] stringValue];
-        CGPoint numberPoint = CGPointMake(xNumberLocation, yNumberLocation);
-        [numberString drawAtPoint:numberPoint withAttributes:numberAttributes];
+        [numberString drawInRect:numberRect withAttributes:numberAttributes];
     }
-    CGContextSetLineWidth(context, tickWidth);
-    CGContextDrawPath(context, kCGPathStroke);
     
     // Draw hour and minute hands
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -128,7 +130,7 @@
     CGContextDrawPath(context, kCGPathStroke);
     
     // Add period indicator label (AM/PM)
-    CGRect periodRect = CGRectMake(xCenter + 0.3 * clockRadius, yCenter - 0.1 * clockRadius, 0.35 * clockRadius, 0.25 * clockRadius);
+    CGRect periodRect = CGRectMake(xCenter + 0.25 * clockRadius, yCenter - 0.1 * clockRadius, 0.35 * clockRadius, 0.25 * clockRadius);
     CGContextAddRect(context, periodRect);
     CGContextSetLineWidth(context, circleWidth);
     CGContextDrawPath(context, kCGPathStroke);
