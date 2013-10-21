@@ -16,7 +16,7 @@
 #define GREENEST_SUBRANGE_REQUEST @"greenest_subrange/?st="
 #define TIME_RANGE_HOURS @"time_range_hours="
 #define USAGE_HOURS @"usage_hours="
-#define RECOMMENDED_START @"recommended_start"
+#define RECOMMENDED_START @"recommended_local_start"
 
 #define PERCENT_GREEN_LABEL_STRING @"%0.1f%% green"
 #define LOCATION_LABEL_STRING @"You're in %@"
