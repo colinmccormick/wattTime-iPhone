@@ -13,6 +13,7 @@
     __weak WTDataModel *dataModel;
     __weak IBOutlet UIDatePicker *datePicker;
     __weak IBOutlet UILabel *instructionLabel;
+    __weak IBOutlet UIButton *okayButton;
 }
 
 @property (weak, nonatomic) NSString *instructionLabelString;

@@ -12,6 +12,10 @@
 
 @synthesize instructionLabelString = _instructionLabelString;
 
+- (IBAction)okayButtonWasTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     NSDate *timeSelected = [datePicker date];
     if ([self.instructionLabelString isEqualToString:START_TIME_STRING]) {
@@ -27,6 +31,10 @@
     // Find pointer to dataModel
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
+    // Make okay button round
+    [okayButton.layer setBorderWidth:1];
+    [okayButton.layer setCornerRadius:10];
+    [okayButton setClipsToBounds:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

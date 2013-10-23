@@ -67,13 +67,16 @@
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:timeZoneName];
     [NSTimeZone setDefaultTimeZone:timeZone];
     NSDate *now = [NSDate date];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components: NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:now];
-    [components setHour:23];
-    [components setMinute:59];
-    NSDate *endOfToday = [calendar dateFromComponents:components];
+    //NSCalendar *calendar = [NSCalendar currentCalendar];
+    //NSDateComponents *components = [calendar components: NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:now];
+    //[components setHour:23];
+    //[components setMinute:59];
+    //NSDate *endOfToday = [calendar dateFromComponents:components];
+    NSInteger sixteenHours = 16 * 3600;
+    NSDate *endOfActivityTimeRange = [now dateByAddingTimeInterval:sixteenHours];
     [self setStartTime:now];
-    [self setEndTime:endOfToday];
+    [self setEndTime:endOfActivityTimeRange];
+    //[self setEndTime:endOfToday];
 }
 
 // Fetch today's green percent data for current location
