@@ -14,7 +14,6 @@
 @synthesize currentLocation = _currentLocation;
 @synthesize activityArray = _activityArray;
 @synthesize currentActivity = _currentActivity;
-@synthesize startTime = _startTime;
 @synthesize endTime = _endTime;
 
 #pragma mark - My methods
@@ -58,7 +57,7 @@
     }
 }
 
-// Update current location , default time zone, startTime (now), endTime (end of today)
+// Update current location , default time zone, endTime
 - (void)updateLocation:(NSString *)location {
     self.currentLocation = location;
     NSArray *locationNames = [self.locationArray valueForKey:@"Name"];
@@ -67,16 +66,9 @@
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:timeZoneName];
     [NSTimeZone setDefaultTimeZone:timeZone];
     NSDate *now = [NSDate date];
-    //NSCalendar *calendar = [NSCalendar currentCalendar];
-    //NSDateComponents *components = [calendar components: NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:now];
-    //[components setHour:23];
-    //[components setMinute:59];
-    //NSDate *endOfToday = [calendar dateFromComponents:components];
-    NSInteger sixteenHours = 16 * 3600;
-    NSDate *endOfActivityTimeRange = [now dateByAddingTimeInterval:sixteenHours];
-    [self setStartTime:now];
+    NSInteger twentyFourHours = 24 * 3600;
+    NSDate *endOfActivityTimeRange = [now dateByAddingTimeInterval:twentyFourHours];
     [self setEndTime:endOfActivityTimeRange];
-    //[self setEndTime:endOfToday];
 }
 
 // Fetch today's green percent data for current location
@@ -88,7 +80,7 @@
     NSString *stateAbbreviation = [abbreviationArray objectAtIndex:[nameArray indexOfObject:self.currentLocation]];
     NSString *url = [NSString stringWithFormat:@"%@%@%@", BASE_URL, TODAY_REQUEST, stateAbbreviation];
     
-    // Download data using URL request
+    // Download data using URL request (THIS IS THE NETWORK CALL)
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
 
     // Parse JSON data
@@ -101,23 +93,22 @@
 }
 
 // Query wattTime server on best time over next timeRangeHours hours to use electricity for usageHours
-// Return dictionary with keys 'recommended_start', 'recommended_fraction_green', 'baseline_fraction_green'
 - (NSDictionary *)generateShiftRecommendation {
     
     // Form URL request from state, timeRangeHours and usageHours
     NSArray *nameArray = [self.locationArray valueForKey:@"Name"];
     NSArray *abbreviationArray = [self.locationArray valueForKey:@"Abbreviation"];
     NSString *stateAbbreviation = [abbreviationArray objectAtIndex:[nameArray indexOfObject:self.currentLocation]];
-    NSTimeInterval distanceBetweenDates = [self.endTime timeIntervalSinceDate:self.startTime];
+    NSTimeInterval timeRangeSeconds = [self.endTime timeIntervalSinceDate:[NSDate date]];
     double secondsInAnHour = 3600;
-    NSInteger timeRangeHours = distanceBetweenDates / secondsInAnHour;
+    NSInteger timeRangeHours = timeRangeSeconds / secondsInAnHour;
     NSInteger usageHours = [[self.currentActivity objectForKey:@"Length"] integerValue];
     NSString *urlStart = [NSString stringWithFormat:@"%@%@%@", BASE_URL, GREENEST_SUBRANGE_REQUEST, stateAbbreviation];
     NSString *urlTimeRange = [NSString stringWithFormat:@"&%@%d", TIME_RANGE_HOURS, timeRangeHours];
     NSString *urlUsageHours = [NSString stringWithFormat:@"&%@%d", USAGE_HOURS, usageHours];
     NSString *url = [NSString stringWithFormat:@"%@%@%@", urlStart, urlTimeRange, urlUsageHours];
     
-    // Download data using URL request
+    // Download data using URL request (THIS IS THE NETWORK CALL)
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     
     // Parse JSON data

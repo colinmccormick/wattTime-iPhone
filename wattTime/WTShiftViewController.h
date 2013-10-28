@@ -19,6 +19,7 @@
     __weak IBOutlet UILabel *activityTwoLabel;
     __weak IBOutlet UILabel *activityThreeLabel;
     __weak IBOutlet UILabel *activityFourLabel;
+    __weak IBOutlet UIButton *setCustomLabel;
 }
 
 @end

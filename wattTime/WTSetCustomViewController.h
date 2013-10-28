@@ -14,7 +14,6 @@
     __weak IBOutlet UILabel *lengthLabel;
     __weak IBOutlet UIStepper *lengthStepper;
     __weak WTDataModel *dataModel;
-    __weak IBOutlet UIButton *okayButton;
 }
 
 @end

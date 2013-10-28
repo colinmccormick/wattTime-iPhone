@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WTShiftViewController.h"
-#import "WTShiftTimeSetViewController.h"
 
 @interface WTShiftDetailViewController : UIViewController {
     __weak WTDataModel *dataModel;
     __weak IBOutlet UILabel *activityLabel;
     __weak IBOutlet UILabel *durationLabel;
-    __weak IBOutlet UIButton *startTimeButton;
-    __weak IBOutlet UIButton *stopTimeButton;
     __weak IBOutlet UIButton *tellMeButton;
     __weak IBOutlet UIImageView *activityImage;
+    __weak IBOutlet UIDatePicker *datePicker;
 }
 
 @end

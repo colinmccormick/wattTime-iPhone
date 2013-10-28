@@ -11,7 +11,6 @@
 		3B13C35917E107760088FAAF /* WTShiftDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B13C35817E107760088FAAF /* WTShiftDetailViewController.m */; };
 		3B2F5C0B18033AE200849D01 /* WTSetCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F5C0A18033AE200849D01 /* WTSetCustomViewController.m */; };
 		3B6607BC17C40C1F00BBD1C5 /* WTStripChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */; };
-		3B753BDD17B45C6C0011645C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B753BDC17B45C6C0011645C /* Default-568h@2x.png */; };
 		3B7D59F817A091B6001D3C3E /* WattTimeAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */; };
 		3B7D59FA17A091BA001D3C3E /* WattTimeAppIconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */; };
 		3B7E686017CBC06C002FCED7 /* WTShiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E685F17CBC06C002FCED7 /* WTShiftViewController.m */; };
@@ -25,7 +24,6 @@
 		3B8E4CE517F0F1AF000B7337 /* WTLocationTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B8E4CE417F0F1AF000B7337 /* WTLocationTabBarIcon.png */; };
 		3B8FE88F17FE26FC00F178BC /* UIClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FE88E17FE26FC00F178BC /* UIClock.m */; };
 		3B97A05C17DCE80100CC4FEA /* tabBarMainIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */; };
-		3BB4C82117E9041F002B039F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4C82017E9041F002B039F /* Default@2x.png */; };
 		3BB4C82917E937D9002B039F /* WTCustomButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4C82517E937D8002B039F /* WTCustomButton.png */; };
 		3BB4C82A17E937D9002B039F /* WTDishesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4C82617E937D8002B039F /* WTDishesButton.png */; };
 		3BB4C82B17E937D9002B039F /* WTEVButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB4C82717E937D8002B039F /* WTEVButton.png */; };
@@ -44,8 +42,11 @@
 		3BEE63561783A99300136BB7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BEE63541783A99300136BB7 /* MainStoryboard_iPad.storyboard */; };
 		3BEE63591783A99300136BB7 /* wattTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */; };
 		3BEFA18017EF5FDE00B9C5DD /* WattTimeShiftDetailButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEFA17F17EF5FDE00B9C5DD /* WattTimeShiftDetailButton.png */; };
-		3BEFA18317EF8BD800B9C5DD /* WTShiftTimeSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEFA18217EF8BD800B9C5DD /* WTShiftTimeSetViewController.m */; };
 		3BEFA18517EF8D0400B9C5DD /* WTShiftTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEFA18417EF8D0400B9C5DD /* WTShiftTitle.png */; };
+		3BFF2C2B181DE1A3002FC7B6 /* WTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF2C2A181DE1A3002FC7B6 /* WTButton.m */; };
+		3BFF2C2D181DE354002FC7B6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BFF2C2C181DE354002FC7B6 /* Default.png */; };
+		3BFF2C2F181DE42C002FC7B6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BFF2C2E181DE42C002FC7B6 /* Default@2x.png */; };
+		3BFF2C31181DE4DE002FC7B6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BFF2C30181DE4DE002FC7B6 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,6 @@
 		3B2F5C0A18033AE200849D01 /* WTSetCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSetCustomViewController.m; sourceTree = "<group>"; };
 		3B6607BA17C40C1F00BBD1C5 /* WTStripChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTStripChart.h; sourceTree = "<group>"; };
 		3B6607BB17C40C1F00BBD1C5 /* WTStripChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTStripChart.m; sourceTree = "<group>"; };
-		3B753BDC17B45C6C0011645C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WattTimeAppIcon.png; path = ../WattTimeAppIcon.png; sourceTree = "<group>"; };
 		3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WattTimeAppIconBig.png; path = ../WattTimeAppIconBig.png; sourceTree = "<group>"; };
 		3B7E685E17CBC06C002FCED7 /* WTShiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTShiftViewController.h; sourceTree = "<group>"; };
@@ -75,7 +75,6 @@
 		3B8FE88D17FE26FC00F178BC /* UIClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIClock.h; sourceTree = "<group>"; };
 		3B8FE88E17FE26FC00F178BC /* UIClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIClock.m; sourceTree = "<group>"; };
 		3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarMainIcon.png; sourceTree = "<group>"; };
-		3BB4C82017E9041F002B039F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3BB4C82517E937D8002B039F /* WTCustomButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTCustomButton.png; sourceTree = "<group>"; };
 		3BB4C82617E937D8002B039F /* WTDishesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTDishesButton.png; sourceTree = "<group>"; };
 		3BB4C82717E937D8002B039F /* WTEVButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTEVButton.png; sourceTree = "<group>"; };
@@ -99,9 +98,12 @@
 		3BEE63551783A99300136BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		3BEE63581783A99300136BB7 /* wattTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wattTime.xcdatamodel; sourceTree = "<group>"; };
 		3BEFA17F17EF5FDE00B9C5DD /* WattTimeShiftDetailButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattTimeShiftDetailButton.png; sourceTree = "<group>"; };
-		3BEFA18117EF8BD800B9C5DD /* WTShiftTimeSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTShiftTimeSetViewController.h; sourceTree = "<group>"; };
-		3BEFA18217EF8BD800B9C5DD /* WTShiftTimeSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTShiftTimeSetViewController.m; sourceTree = "<group>"; };
 		3BEFA18417EF8D0400B9C5DD /* WTShiftTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTShiftTitle.png; sourceTree = "<group>"; };
+		3BFF2C29181DE1A3002FC7B6 /* WTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTButton.h; sourceTree = "<group>"; };
+		3BFF2C2A181DE1A3002FC7B6 /* WTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTButton.m; sourceTree = "<group>"; };
+		3BFF2C2C181DE354002FC7B6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3BFF2C2E181DE42C002FC7B6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3BFF2C30181DE4DE002FC7B6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +166,6 @@
 				3B2F5C0A18033AE200849D01 /* WTSetCustomViewController.m */,
 				3B13C35717E107760088FAAF /* WTShiftDetailViewController.h */,
 				3B13C35817E107760088FAAF /* WTShiftDetailViewController.m */,
-				3BEFA18117EF8BD800B9C5DD /* WTShiftTimeSetViewController.h */,
-				3BEFA18217EF8BD800B9C5DD /* WTShiftTimeSetViewController.m */,
 				3B8E4CDD17F0BD67000B7337 /* WTShiftResultViewController.h */,
 				3B8E4CDE17F0BD67000B7337 /* WTShiftResultViewController.m */,
 				3B6607BA17C40C1F00BBD1C5 /* WTStripChart.h */,
@@ -175,6 +175,8 @@
 				3B8E0EB517DFB5D600F17421 /* Activities.plist */,
 				3B8FE88D17FE26FC00F178BC /* UIClock.h */,
 				3B8FE88E17FE26FC00F178BC /* UIClock.m */,
+				3BFF2C29181DE1A3002FC7B6 /* WTButton.h */,
+				3BFF2C2A181DE1A3002FC7B6 /* WTButton.m */,
 			);
 			path = wattTime;
 			sourceTree = "<group>";
@@ -187,15 +189,16 @@
 				3B8E4CE017F0E990000B7337 /* WTLocationTitle.png */,
 				3BEFA18417EF8D0400B9C5DD /* WTShiftTitle.png */,
 				3B8E4CE417F0F1AF000B7337 /* WTLocationTabBarIcon.png */,
+				3BFF2C2C181DE354002FC7B6 /* Default.png */,
 				3BB4C83517E93D35002B039F /* WTShiftTabBarIcon.png */,
 				3B97A05B17DCE80100CC4FEA /* tabBarMainIcon.png */,
 				3B7D59F917A091BA001D3C3E /* WattTimeAppIconBig.png */,
+				3BFF2C30181DE4DE002FC7B6 /* Default-568h@2x.png */,
 				3B7D59F717A091B6001D3C3E /* WattTimeAppIcon.png */,
-				3B753BDC17B45C6C0011645C /* Default-568h@2x.png */,
-				3BB4C82017E9041F002B039F /* Default@2x.png */,
 				3BB4C82517E937D8002B039F /* WTCustomButton.png */,
 				3BEFA17F17EF5FDE00B9C5DD /* WattTimeShiftDetailButton.png */,
 				3BB4C82617E937D8002B039F /* WTDishesButton.png */,
+				3BFF2C2E181DE42C002FC7B6 /* Default@2x.png */,
 				3BB4C82717E937D8002B039F /* WTEVButton.png */,
 				3BB4C82817E937D8002B039F /* WTLaundryButton.png */,
 				3BEE63571783A99300136BB7 /* wattTime.xcdatamodeld */,
@@ -267,17 +270,18 @@
 				3B8E4CE117F0E990000B7337 /* WTLocationTitle.png in Resources */,
 				3BEE63561783A99300136BB7 /* MainStoryboard_iPad.storyboard in Resources */,
 				3BC255FC17936A79008D2ABE /* States.plist in Resources */,
+				3BFF2C2F181DE42C002FC7B6 /* Default@2x.png in Resources */,
 				3B7D59F817A091B6001D3C3E /* WattTimeAppIcon.png in Resources */,
 				3B8C808E180735F100F75C53 /* WTBackButton.png in Resources */,
 				3B7D59FA17A091BA001D3C3E /* WattTimeAppIconBig.png in Resources */,
-				3B753BDD17B45C6C0011645C /* Default-568h@2x.png in Resources */,
 				3BEFA18517EF8D0400B9C5DD /* WTShiftTitle.png in Resources */,
 				3B833C7B17C6824100F88647 /* WattTimeWordLogoNew.png in Resources */,
 				3B97A05C17DCE80100CC4FEA /* tabBarMainIcon.png in Resources */,
+				3BFF2C2D181DE354002FC7B6 /* Default.png in Resources */,
 				3BEFA18017EF5FDE00B9C5DD /* WattTimeShiftDetailButton.png in Resources */,
 				3B8E0EB617DFB5D600F17421 /* Activities.plist in Resources */,
-				3BB4C82117E9041F002B039F /* Default@2x.png in Resources */,
 				3BB4C82917E937D9002B039F /* WTCustomButton.png in Resources */,
+				3BFF2C31181DE4DE002FC7B6 /* Default-568h@2x.png in Resources */,
 				3BB4C82A17E937D9002B039F /* WTDishesButton.png in Resources */,
 				3BB4C82B17E937D9002B039F /* WTEVButton.png in Resources */,
 				3BB4C82C17E937D9002B039F /* WTLaundryButton.png in Resources */,
@@ -293,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BEFA18317EF8BD800B9C5DD /* WTShiftTimeSetViewController.m in Sources */,
+				3BFF2C2B181DE1A3002FC7B6 /* WTButton.m in Sources */,
 				3B8E4CDF17F0BD67000B7337 /* WTShiftResultViewController.m in Sources */,
 				3B8FE88F17FE26FC00F178BC /* UIClock.m in Sources */,
 				3BEE634C1783A99300136BB7 /* main.m in Sources */,
@@ -368,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;

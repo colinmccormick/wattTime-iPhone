@@ -32,10 +32,6 @@
     // Find pointer to dataModel
     WTAppDelegate *appDelegate = (WTAppDelegate *)[[UIApplication sharedApplication] delegate];
     dataModel = appDelegate.dataModel;
-    // Make okay button round
-    [okayButton.layer setBorderWidth:1];
-    [okayButton.layer setCornerRadius:10];
-    [okayButton setClipsToBounds:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

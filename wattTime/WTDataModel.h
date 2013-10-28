@@ -21,14 +21,13 @@
 #define PERCENT_GREEN_LABEL_STRING @"%0.1f%% green"
 #define LOCATION_LABEL_STRING @"You're in %@"
 #define ACTIVITY_STRING @"%@"
-#define DURATION_STRING @"%@ hours"
-#define DATE_FORMAT_STRING @"MMM dd hh:mm a"
+#define DURATION_STRING @"%@ hours long"
+#define DATE_FORMAT_STRING @"h:mm a"
 #define JSON_DATE_FORMAT_STRING @"YYYY-MM-DD HH:mm"
-#define START_TIME_SEGUE_NAME @"showShiftStartTimeSetView"
-#define END_TIME_SEGUE_NAME @"showShiftEndTimeSetView"
-#define START_TIME_STRING @"START TIME:"
 #define END_TIME_STRING @"END TIME:"
+#define TIME_WARNING_STRING @"The end time must be later than the start time."
 #define CA_WARNING_STRING @"Shift only works in California.  Change your location to use it."
+#define SHIFT_END_STRING @"end at %@"
 
 @interface WTDataModel : NSObject
 
@@ -36,7 +35,6 @@
 @property (strong, nonatomic) NSString *currentLocation;
 @property (strong, nonatomic) NSMutableArray *activityArray;
 @property (strong, nonatomic) NSDictionary *currentActivity;
-@property (strong, nonatomic) NSDate *startTime;
 @property (strong, nonatomic) NSDate *endTime;
 
 - (id)init;

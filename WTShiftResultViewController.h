@@ -14,6 +14,7 @@
     __weak WTDataModel *dataModel;
     __weak IBOutlet UILabel *shiftResultLabel;
     __weak IBOutlet UIClock *shiftResultClock;
+    __weak IBOutlet UILabel *shiftEndLabel;
 }
 
 - (void)displayRecommendedStartTime;

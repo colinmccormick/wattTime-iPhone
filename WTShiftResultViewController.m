@@ -21,7 +21,7 @@
     // Send download request (use second thread to avoid blocking main thread)
     dispatch_queue_t fetch_queue = dispatch_queue_create("JSON Fetch", NULL);
     dispatch_async(fetch_queue, ^{
-        // Get recommended time
+        // Get recommended time (THIS IS THE NETWORK CALL)
         NSDictionary *dictionaryOfRecommendedTime = [dataModel generateShiftRecommendation];
         // Put back on the main thread to use UIKit
         dispatch_async(dispatch_get_main_queue(), ^{
