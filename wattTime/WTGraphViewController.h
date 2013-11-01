@@ -1,6 +1,6 @@
 //
 //  WTGraphViewController.h
-//  wattTime 0.4
+//  wattTime
 //
 //  Created by Colin McCormick on 9/24/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.

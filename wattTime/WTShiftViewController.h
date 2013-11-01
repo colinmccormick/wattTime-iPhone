@@ -1,6 +1,6 @@
 //
 //  WTShiftViewController.h
-//  wattTime v0.4
+//  wattTime
 //
 //  Created by Colin McCormick on 8/26/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.

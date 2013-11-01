@@ -63,7 +63,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.52941176469999995" green="0.84313725490000002" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Graph" image="tabBarMainIcon.png" id="Hs8-Tq-0KC"/>
+                    <tabBarItem key="tabBarItem" title="Graph" image="WTGraphTabBarIcon.png" id="Hs8-Tq-0KC"/>
                     <navigationItem key="navigationItem" title="Green grid amount" id="6UX-5K-2Ep"/>
                     <connections>
                         <outlet property="locationLabel" destination="V3h-ej-GHW" id="QWx-g7-suu"/>
@@ -481,7 +481,7 @@
                                     <!--2013-10-28 22:32:51 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -499,7 +499,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                         </subviews>
@@ -532,6 +532,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="BvD-fW-BCP" kind="relationship" relationship="viewControllers" id="cSz-HZ-OPc"/>
                         <segue destination="Bj7-4Z-rYK" kind="relationship" relationship="viewControllers" id="tE9-T9-6MM"/>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="OdO-HS-IZa"/>
                         <segue destination="6" kind="relationship" relationship="viewControllers" id="tZq-Hf-cZa"/>
@@ -560,16 +561,65 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="477" y="1105"/>
         </scene>
+        <!--List View Controller - List-->
+        <scene sceneID="bP6-q6-Hiv">
+            <objects>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="BvD-fW-BCP" customClass="WTListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="80" sectionHeaderHeight="40" sectionFooterHeight="40" id="VsH-03-iJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listCell" textLabel="Dbc-oF-t0T" detailTextLabel="x6S-Dw-6On" rowHeight="80" style="IBUITableViewCellStyleValue1" id="sv9-nf-aTq">
+                                <rect key="frame" x="0.0" y="40" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sv9-nf-aTq" id="E9j-Tc-qbV">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="09:00am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dbc-oF-t0T">
+                                            <rect key="frame" x="15" y="20" width="141" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="0.0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x6S-Dw-6On">
+                                            <rect key="frame" x="264" y="36" width="41" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BvD-fW-BCP" id="Cx6-o7-6uY"/>
+                            <outlet property="delegate" destination="BvD-fW-BCP" id="PhF-yc-jfm"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="List" image="WTListTabBarIcon.png" id="7oy-qr-4zT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMa-lp-BFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="1673"/>
+        </scene>
     </scenes>
     <resources>
         <image name="WTCustomButton.png" width="100" height="100"/>
         <image name="WTDishesButton.png" width="100" height="100"/>
         <image name="WTEVButton.png" width="100" height="100"/>
+        <image name="WTGraphTabBarIcon.png" width="30" height="30"/>
         <image name="WTLaundryButton.png" width="100" height="100"/>
+        <image name="WTListTabBarIcon.png" width="30" height="30"/>
         <image name="WTLocationMap.png" width="300" height="100"/>
         <image name="WTLocationTabBarIcon.png" width="30" height="30"/>
         <image name="WTShiftTabBarIcon.png" width="30" height="30"/>
-        <image name="tabBarMainIcon.png" width="30" height="30"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -1,6 +1,6 @@
 //
 //  WTShiftResultViewController.h
-//  wattTime v0.4
+//  wattTime
 //
 //  Created by Colin McCormick on 9/23/13.
 //  Copyright (c) 2013 wattTime. All rights reserved.
